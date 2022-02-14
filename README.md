@@ -25,7 +25,7 @@
 将通过实战案例串讲前面讲到的数据结构和算法；并拿一些开源项目和框架，剖析它们背后的数据结构和算法；并带你用学过的内容实现一个短网址系统；深化对概念和应用的理解，灵活使用数据结构和算法。
 
 
-
+![Uploading image.png…](https://time.geekbang.org/column/intro/100017301?code=upphwR-wiWAfkaUyBnTMOP%2FSurxJdhsdHo11WB5O3c0%3D&source=app_share)
 
 
 
