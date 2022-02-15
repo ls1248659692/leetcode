@@ -244,4 +244,4 @@
 
 如果本仓库对你有帮助，可以请作者喝杯速溶咖啡
 
-<img src="book/算法/算法之美.png" width = "400" align=center />
+<img src="leetcode.jpg" width = "400" align=center />
