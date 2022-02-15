@@ -244,4 +244,4 @@
 
 如果本仓库对你有帮助，可以请作者喝杯速溶咖啡
 
-<img src="https://gitee.com/jam_liang008/leetcode/blob/master/leetcode.jpg" width = "400" align=center />
+![Uploading image.png…](https://gitee.com/jam_liang008/leetcode/blob/master/leetcode.jpg)
