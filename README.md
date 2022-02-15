@@ -1,6 +1,3 @@
-![Uploading image.png…](https://static001.geekbang.org/resource/image/1b/ae/1b969cfe410a43d5f2b148c255beb3ae.jpg)
-
-
 ## 你将获得
       20 个经典数据结构与算法；
 
