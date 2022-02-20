@@ -49,7 +49,9 @@
 >剑指 Offer 57 - II. 和为s的连续正数序列
 
 # `2. 双指针`
->双指针通常用在排好序的数组或是链表中寻找对子, 或者是merge 或者是排序，或者去除element，反正一般都是头尾各一个指针，然后根据条件移动。【参考Jaylen's Blog】 1. Two Sum（# 也可以用map的方式做）
+>双指针通常用在排好序的数组或是链表中寻找对子, 或者是merge 或者是排序，或者去除element，反正一般都是头尾各一个指针，然后根据条件移动。
+
+>1. Two Sum（# 也可以用map的方式做）
 >167. Two Sum II - Input array is sorted
 >977. Squares of a Sorted Array (很像merge sort里的merge）
 >283. Move Zeroes
@@ -66,6 +68,7 @@
 
 # `3. 快慢指针/ 链表题目`
 >快慢指针是处理linked list常用的套路，通常是用来判断成环以及环的入口，或者是寻找 list中第k个元素。
+
 >141. Linked List Cycle
 >142. Linked List Cycle II
 >234. Palindrome Linked List
@@ -83,18 +86,21 @@
 
 # `5. 区间合并`
 >区间合并的问题，通常是重新把区间按照start和end排序，重新组合区间。
+
 >56. Merge Intervals
 >986. Interval List Intersections
 >57. Insert Interval
 
 # `6. 无序限定范围的数组元素查找O(N）`
 >要求 inplace， 通常是采用正负反转的做法
+
 >41. First Missing Positive
 >448. Find All Numbers Disappeared in an Array
 >剑指 Offer 03. 数组中重复的数字
 
 # `7. BFS`
 >BFS 通常采用queue 来实现
+
 >102. Binary Tree Level Order Traversal
 >103. Binary Tree Zigzag Level Order Traversal
 >297. Serialize and Deserialize Binary Tree
@@ -103,6 +109,7 @@
 
 # `8. 树的DFS`
 >通常采用递归 111. Minimum Depth of Binary Tree
+
 >112. Path Sum
 >113. Path Sum II（和剑指 Offer 34. 二叉树中和为某一值的路径一样）
 >437. Path Sum III
@@ -116,6 +123,7 @@
 
 # `9. DFS/递归/回溯法`
 >对于排列和组合的题目，需要主要判断是否会有重复数字，如有重复，需要先进行sort，而且需要进行剪枝。
+
 >78. Subsets
 >90. Subsets II
 >46. Permutations
@@ -135,7 +143,8 @@
 >剑指 Offer 09. 用两个栈实现队列
 
 # `11. 二分法与二分法变种`
->当你需要解决的问题的输入是排好序的数组，链表，或是排好序的矩阵，要求咱们寻找某些特定元素。这个时候的不二选择就是二分搜索。这种模式是一种超级牛的用二分来解决问题的方式。 对于一组满足上升排列的数集来说，这种模式的步骤是这样的： 首先，算出左右端点的中点。最简单的方式是这样的：middle = (start + end) / 2。但这种计算方式有不小的概率会出现整数越界。因此一般都推荐另外这种写法：middle = start + (end — start) // 2 如果要找的目标改好和中点所在的数值相等，我们返回中点的下标就行 如果目标不等的话：我们就有两种移动方式了 如果目标比中点在的值小（key < arr[middle]）：将下一步搜索空间放到左边（end = middle - 1） 如果比中点的值大，则继续在右边搜索，丢弃左边：left = middle + 1 图示该过程的话，如下图所示： 我习惯的循环结束条件是 start + 1 < end（如果使用start=mid或者end=mid而不是+-1时必须要使用，否则可能进入死循环）, 然后在分别判断start 和 end 的结果 
+>当你需要解决的问题的输入是排好序的数组，链表，或是排好序的矩阵，要求咱们寻找某些特定元素。这个时候的不二选择就是二分搜索。
+
 >35. Search Insert Position
 >34. Find First and Last Position of Element in Sorted Array
 >33. Search in Rotated Sorted Array
@@ -147,14 +156,14 @@
 
 # `12. 前K大的数模式HEAP`
 >采用priority queue 或者 说在python 中的heapq 求top k 采用最小堆（默认） 采用最大堆的时候可以采用push 负的value
+
 >215. Kth Largest Element in an Array
 >347. Top K Frequent Elements
 >373. Find K Pairs with Smallest Sums
 
 # `13. K路归并`
 >K路归并能帮咱们解决那些涉及到多组排好序的数组的问题。
->每当你的输入是K个排好序的数组，你就可以用堆来高效顺序遍历其中所有数组的所有元素。你可以将每个数组中最小的一个元素加入到最小堆中，从而得到全局最小值。当我们拿到这个全局最小值之后，再从该元素所在的数组里取出其后面紧挨着的元素，加入堆。如此往复直到处理完所有的元素。
-特殊情况：2路并归 （mergesort 中的merge， 双指针就可以完成）
+
 >23. Merge k Sorted Lists
 >21. Merge Two Sorted Lists
 
@@ -225,6 +234,7 @@
 
 # `19. 字符串`
 >一般都有很多corner cases 需要考虑 8. String to Integer (atoi)
+
 >剑指 Offer 20. 表示数值的字符串
 >剑指 Offer 58 - I. 翻转单词顺序(2次翻转）
 >剑指 Offer 58 - II. 左旋转字符串
