@@ -46,7 +46,7 @@
 >121. Best Time to Buy and Sell Stock
 >3. Longest Substring Without Repeating Characters
 >239. Sliding Window Maximum
->剑指 Offer 57 - II. 和为s的连续正数序列
+>* 剑指 Offer 57 - II. 和为s的连续正数序列
 
 # `2. 双指针`
 >双指针通常用在排好序的数组或是链表中寻找对子, 或者是merge 或者是排序，或者去除element，反正一般都是头尾各一个指针，然后根据条件移动。
@@ -63,8 +63,8 @@
 >11. Container With Most Water
 >42. Trapping Rain Water
 >75. Sort Colors
->剑指 Offer 04. 二维数组中的查找
->剑指 Offer 21. 调整数组顺序使奇数位于偶数前面
+>* 剑指 Offer 04. 二维数组中的查找
+>* 剑指 Offer 21. 调整数组顺序使奇数位于偶数前面
 
 # `3. 快慢指针/ 链表题目`
 >快慢指针是处理linked list常用的套路，通常是用来判断成环以及环的入口，或者是寻找 list中第k个元素。
@@ -73,10 +73,10 @@
 >142. Linked List Cycle II
 >234. Palindrome Linked List
 >61. Rotate List
->剑指 Offer 18. 删除链表的节点
+>* 剑指 Offer 18. 删除链表的节点
 >JZ56 删除链表中重复的结点
->剑指 Offer 22. 链表中倒数第k个节点
->剑指 Offer 52. 两个链表的第一个公共节点
+>* 剑指 Offer 22. 链表中倒数第k个节点
+>* 剑指 Offer 52. 两个链表的第一个公共节点
 
 # `4. 原地链表翻转`
 >234. Palindrome Linked List
@@ -117,9 +117,9 @@
 >101. Symmetric Tree
 >104. Maximum Depth of Binary Tree
 >110. Balanced Binary Tree
->剑指 Offer 26. 树的子结构
->剑指 Offer 33. 二叉搜索树的后序遍历序列
->剑指 Offer 54. 二叉搜索树的第k大节点(inorder)
+>* 剑指 Offer 26. 树的子结构
+>* 剑指 Offer 33. 二叉搜索树的后序遍历序列
+>* 剑指 Offer 54. 二叉搜索树的第k大节点(inorder)
 
 # `9. DFS/递归/回溯法`
 >对于排列和组合的题目，需要主要判断是否会有重复数字，如有重复，需要先进行sort，而且需要进行剪枝。
@@ -135,12 +135,12 @@
 >131. Palindrome Partitioning !
 >17. Letter Combinations of a Phone Number (differ from 91. Decode Ways)
 >79. Word Search(same as 剑指 Offer 12. 矩阵中的路径)
->剑指 Offer 13. 机器人的运动范围
+>* 剑指 Offer 13. 机器人的运动范围
 >10. 双堆模式
 >295 Find-Median-from-Data-Stream
 >480. Sliding Window Median
 >155. Min Stack
->剑指 Offer 09. 用两个栈实现队列
+>* 剑指 Offer 09. 用两个栈实现队列
 
 # `11. 二分法与二分法变种`
 >当你需要解决的问题的输入是排好序的数组，链表，或是排好序的矩阵，要求咱们寻找某些特定元素。这个时候的不二选择就是二分搜索。
@@ -152,7 +152,7 @@
 >154. Find Minimum in Rotated Sorted Array II(same as [剑指 Offer 11. 旋转数组的最小数字])
 >162. Find Peak Element
 >540. Single Element in a Sorted Array
->剑指 Offer 16. 数值的整数次方(2分法)
+>* 剑指 Offer 16. 数值的整数次方(2分法)
 
 # `12. 前K大的数模式HEAP`
 >采用priority queue 或者 说在python 中的heapq 求top k 采用最小堆（默认） 采用最大堆的时候可以采用push 负的value
@@ -192,28 +192,29 @@
 >518. Coin Change 2
 >91. Decode Ways
 >139. Word Break
->剑指 Offer 10- I. 斐波那契数列
->剑指 Offer 10- II. 青蛙跳台阶问题
+>* 剑指 Offer 10- I. 斐波那契数列
+>* 剑指 Offer 10- II. 青蛙跳台阶问题
 >矩形覆盖
 >变态跳台阶
->剑指 Offer 14- I. 剪绳子
->剑指 Offer 46. 把数字翻译成字符串
->剑指 Offer 47. 礼物的最大价值
->剑指 Offer 49. 丑数
->剑指 Offer 60. n个骰子的点数
+>* 剑指 Offer 14- I. 剪绳子
+>* 剑指 Offer 46. 把数字翻译成字符串
+>* 剑指 Offer 47. 礼物的最大价值
+>* 剑指 Offer 49. 丑数
+>* 剑指 Offer 60. n个骰子的点数
 
 # `15. 排序算法`
->Selection Sort
->Heapsort
->Mergesort
->Insertion Sort
->Shell's Sort
->Quicksort
->Bubblesort
->Linear Sorting
+
+>* Selection Sort
+>* Heapsort
+>* Mergesort
+>* Insertion Sort
+>* Shell's Sort
+>* Quicksort
+>* Bubblesort
+>* Linear Sorting
 
 # `16. 树和链表结合`
->剑指 Offer 36. 二叉搜索树与双向链表
+>36. 二叉搜索树与双向链表
 >109. Convert Sorted List to Binary Search Tree
 >114. Flatten Binary Tree to Linked List
 
@@ -228,31 +229,35 @@
 >136. Single Number
 >540. Single Element in a Sorted Array
 >190. Reverse Bits
->剑指 Offer 15. 二进制中1的个数
->剑指 Offer 56 - I. 数组中数字出现的次数
->剑指 Offer 56 - II. 数组中数字出现的次数 II
+>* 剑指 Offer 15. 二进制中1的个数
+>* 剑指 Offer 56 - I. 数组中数字出现的次数
+>* 剑指 Offer 56 - II. 数组中数字出现的次数 II
 
 # `19. 字符串`
->一般都有很多corner cases 需要考虑 8. String to Integer (atoi)
+>一般都有很多corner cases 需要考虑
+ 
+>8. String to Integer (atoi)
 
->剑指 Offer 20. 表示数值的字符串
->剑指 Offer 58 - I. 翻转单词顺序(2次翻转）
->剑指 Offer 58 - II. 左旋转字符串
+>* 剑指 Offer 20. 表示数值的字符串
+>* 剑指 Offer 58 - I. 翻转单词顺序(2次翻转）
+>* 剑指 Offer 58 - II. 左旋转字符串
 
 # `20. stack`
->剑指 Offer 31. 栈的压入、弹出序列
+
+>* 剑指 Offer 31. 栈的压入、弹出序列
 
 # `21. math`
->172. Factorial Trailing Zeroes
->470. Implement Rand10() Using Rand7()
+> 172. Factorial Trailing Zeroes
+> 470. Implement Rand10() Using Rand7()
 
 # `22. array`
->剑指 Offer 66. 构建乘积数组
+>* 剑指 Offer 66. 构建乘积数组
 
 # `23. 二叉搜索树`
->剑指 Offer 68 - I. 二叉搜索树的最近公共祖先
->剑指 Offer 68 - II. 二叉树的最近公共祖先
->二叉树的下一个结点
+
+>* 剑指 Offer 68 - I. 二叉搜索树的最近公共祖先
+>* 剑指 Offer 68 - II. 二叉树的最近公共祖先
+>* 二叉树的下一个结点
 
 # Donate
 
