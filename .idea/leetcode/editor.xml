@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="LeetcodeEditor">
+    <option name="projectConfig">
+      <map>
+        <entry key="$USER_HOME$/AppData/Local/Temp/leetcode/editor/cn/[2]两数相加.py">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$USER_HOME$/AppData/Local/Temp/leetcode/editor/cn/doc/content/[2]两数相加.md" />
+              <option name="frontendQuestionId" value="leetcode-cn.com2" />
+              <option name="host" value="leetcode-cn.com" />
+              <option name="path" value="$USER_HOME$/AppData/Local/Temp/leetcode/editor/cn/[2]两数相加.py" />
+              <option name="titleSlug" value="add-two-numbers" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/AppData/Local/Temp/leetcode/editor/cn/[838]推多米诺.py">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/leetcode_problems/leetcode/editor/cn/doc/content/[838]推多米诺.md" />
+              <option name="frontendQuestionId" value="leetcode-cn.com838" />
+              <option name="host" value="leetcode-cn.com" />
+              <option name="path" value="$PROJECT_DIR$/leetcode_problems/leetcode/editor/cn/[838]推多米诺.py" />
+              <option name="titleSlug" value="push-dominoes" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/leetcode_problems/leetcode/editor/cn/[1994]好子集的数目.py">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/leetcode_problems/leetcode/editor/cn/doc/content/[1994]好子集的数目.md" />
+              <option name="frontendQuestionId" value="leetcode-cn.com1994" />
+              <option name="host" value="leetcode-cn.com" />
+              <option name="path" value="$PROJECT_DIR$/leetcode_problems/leetcode/editor/cn/[1994]好子集的数目.py" />
+              <option name="titleSlug" value="the-number-of-good-subsets" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/leetcode_problems/leetcode/editor/cn/[838]Push Dominoes.py">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/leetcode_problems/leetcode/editor/cn/doc/content/[838]推多米诺.md" />
+              <option name="frontendQuestionId" value="leetcode-cn.com838" />
+              <option name="host" value="leetcode-cn.com" />
+              <option name="path" value="$PROJECT_DIR$/leetcode_problems/leetcode/editor/cn/[838]推多米诺.py" />
+              <option name="titleSlug" value="push-dominoes" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/leetcode_problems/leetcode/editor/cn/[838]推多米诺.py">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/leetcode_problems/leetcode/editor/cn/doc/content/[838]推多米诺.md" />
+              <option name="frontendQuestionId" value="leetcode-cn.com838" />
+              <option name="host" value="leetcode-cn.com" />
+              <option name="path" value="$PROJECT_DIR$/leetcode_problems/leetcode/editor/cn/[838]推多米诺.py" />
+              <option name="titleSlug" value="push-dominoes" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

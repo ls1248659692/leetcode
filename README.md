@@ -5,16 +5,16 @@
 
 本仓库的 leetcode 文件夹下都是基于 LeetCode 的题目，涵盖了所有题型和技巧，而且一定要做到**举一反三，通俗易懂**，绝不是简单的代码堆砌，后面有相关算法系统学习书籍和题目推荐。
 
-我先吐槽几句。**刷题刷题，刷的是题，培养的是思维，本仓库的目的就是传递这种算法思维**。我要是只写一个包含 LeetCode 题目代码的仓库，有个锤子用？没有思路解释，没有思维框架，顶多写个时间复杂度，那玩意一眼就能看出来。
+**刷题刷题，刷的是题，培养的是思维，本仓库的目的就是传递这种算法思维**。我要是只写一个包含 LeetCode 题目代码的仓库，有个锤子用？没有思路解释，没有思维框架，顶多写个时间复杂度，那玩意一眼就能看出来。
 
 只想要答案的话很容易，题目评论区五花八门的答案，动不动就秀 python 一行代码解决，有那么多人点赞。问题是，你去做算法题，是去学习编程语言的奇技淫巧的，还是学习算法思维的呢？你的快乐，到底源自复制别人的一行代码通过测试，已完成题目 +1，还是源自自己通过逻辑推理和算法框架不看答案写出解法？
 
-**做啥事情做多了，都能发现套路的，我把各种算法套路框架总结出来，相信可以帮助其他人少走弯路**。我这个纯靠自学的小童鞋，花了一年时间刷题和总结，自己写了一份算法小抄，后面有目录，这里就不废话了。
+**做啥事情做多了，都能发现套路和规律，我把各种算法套路框架总结出来，相信可以帮助其他人少走弯路**。我这个纯靠自学的小童鞋，通过总结写的算法题，写了一份算法小抄，后面有目录，这里就不废话了。
 
 
-# 算法题汇总
+## 算法题汇总
 
-## 不同算法类型
+### 不同算法类型
 >1. 滑动窗口
 >2. 双指针
 >3. 快慢指针/ 链表题目
@@ -39,16 +39,16 @@
 >22. array
 >23. 二叉搜索树
 
-# 题型汇总
+## 题型汇总
 
-# `1. 滑动窗口`
+### `1. 滑动窗口`
 >53. 大小为 K 的子数组的最大和
 >121. Best Time to Buy and Sell Stock
 >3. Longest Substring Without Repeating Characters
 >239. Sliding Window Maximum
 >* 剑指 Offer 57 - II. 和为s的连续正数序列
 
-# `2. 双指针`
+### `2. 双指针`
 >双指针通常用在排好序的数组或是链表中寻找对子, 或者是merge 或者是排序，或者去除element，反正一般都是头尾各一个指针，然后根据条件移动。
 
 >1. Two Sum（# 也可以用map的方式做）
@@ -66,7 +66,7 @@
 >* 剑指 Offer 04. 二维数组中的查找
 >* 剑指 Offer 21. 调整数组顺序使奇数位于偶数前面
 
-# `3. 快慢指针/ 链表题目`
+### `3. 快慢指针/ 链表题目`
 >快慢指针是处理linked list常用的套路，通常是用来判断成环以及环的入口，或者是寻找 list中第k个元素。
 
 >141. Linked List Cycle
@@ -78,27 +78,27 @@
 >* 剑指 Offer 22. 链表中倒数第k个节点
 >* 剑指 Offer 52. 两个链表的第一个公共节点
 
-# `4. 原地链表翻转`
+### `4. 原地链表翻转`
 >234. Palindrome Linked List
 >206. Reverse Linked List
 >25. Reverse Nodes in k-Group
 >92. Reverse Linked List II
 
-# `5. 区间合并`
+### `5. 区间合并`
 >区间合并的问题，通常是重新把区间按照start和end排序，重新组合区间。
 
 >56. Merge Intervals
 >986. Interval List Intersections
 >57. Insert Interval
 
-# `6. 无序限定范围的数组元素查找O(N）`
+### `6. 无序限定范围的数组元素查找O(N）`
 >要求 inplace， 通常是采用正负反转的做法
 
 >41. First Missing Positive
 >448. Find All Numbers Disappeared in an Array
 >剑指 Offer 03. 数组中重复的数字
 
-# `7. BFS`
+### `7. BFS`
 >BFS 通常采用queue 来实现
 
 >102. Binary Tree Level Order Traversal
@@ -107,7 +107,7 @@
 >127. Word Ladder I
 >207. Course Schedule【拓扑排序】
 
-# `8. 树的DFS`
+### `8. 树的DFS`
 >通常采用递归 111. Minimum Depth of Binary Tree
 
 >112. Path Sum
@@ -121,7 +121,7 @@
 >* 剑指 Offer 33. 二叉搜索树的后序遍历序列
 >* 剑指 Offer 54. 二叉搜索树的第k大节点(inorder)
 
-# `9. DFS/递归/回溯法`
+### `9. DFS/递归/回溯法`
 >对于排列和组合的题目，需要主要判断是否会有重复数字，如有重复，需要先进行sort，而且需要进行剪枝。
 
 >78. Subsets
@@ -142,7 +142,7 @@
 >155. Min Stack
 >* 剑指 Offer 09. 用两个栈实现队列
 
-# `11. 二分法与二分法变种`
+### `11. 二分法与二分法变种`
 >当你需要解决的问题的输入是排好序的数组，链表，或是排好序的矩阵，要求咱们寻找某些特定元素。这个时候的不二选择就是二分搜索。
 
 >35. Search Insert Position
@@ -154,20 +154,20 @@
 >540. Single Element in a Sorted Array
 >* 剑指 Offer 16. 数值的整数次方(2分法)
 
-# `12. 前K大的数模式HEAP`
+### `12. 前K大的数模式HEAP`
 >采用priority queue 或者 说在python 中的heapq 求top k 采用最小堆（默认） 采用最大堆的时候可以采用push 负的value
 
 >215. Kth Largest Element in an Array
 >347. Top K Frequent Elements
 >373. Find K Pairs with Smallest Sums
 
-# `13. K路归并`
+### `13. K路归并`
 >K路归并能帮咱们解决那些涉及到多组排好序的数组的问题。
 
 >23. Merge k Sorted Lists
 >21. Merge Two Sorted Lists
 
-# `14. DP 动态规划`
+### `14. DP 动态规划`
 >300. Longest Increasing Subsequence
 >1143. Longest Common Subsequence
 >72. Edit Distance
@@ -202,7 +202,7 @@
 >* 剑指 Offer 49. 丑数
 >* 剑指 Offer 60. n个骰子的点数
 
-# `15. 排序算法`
+### `15. 排序算法`
 
 >* Selection Sort
 >* Heapsort
@@ -213,19 +213,19 @@
 >* Bubblesort
 >* Linear Sorting
 
-# `16. 树和链表结合`
+### `16. 树和链表结合`
 >36. 二叉搜索树与双向链表
 >109. Convert Sorted List to Binary Search Tree
 >114. Flatten Binary Tree to Linked List
 
-# `17. 树的重新构建`
+### `17. 树的重新构建`
 >105. Construct Binary Tree from Preorder and Inorder Traversal
 >106. Construct Binary Tree from Inorder and Postorder Traversal
 >606. Construct String from Binary Tree
 >1008. Construct Binary Search Tree from Preorder Traversal
 >889. Construct Binary Tree from Preorder and Postorder Traversal
 
-# `18. 位运算`
+### `18. 位运算`
 >136. Single Number
 >540. Single Element in a Sorted Array
 >190. Reverse Bits
@@ -233,7 +233,7 @@
 >* 剑指 Offer 56 - I. 数组中数字出现的次数
 >* 剑指 Offer 56 - II. 数组中数字出现的次数 II
 
-# `19. 字符串`
+### `19. 字符串`
 >一般都有很多corner cases 需要考虑
  
 >8. String to Integer (atoi)
@@ -242,24 +242,24 @@
 >* 剑指 Offer 58 - I. 翻转单词顺序(2次翻转）
 >* 剑指 Offer 58 - II. 左旋转字符串
 
-# `20. stack`
+### `20. stack`
 
 >* 剑指 Offer 31. 栈的压入、弹出序列
 
-# `21. math`
+### `21. math`
 > 172. Factorial Trailing Zeroes
 > 470. Implement Rand10() Using Rand7()
 
-# `22. array`
+### `22. array`
 >* 剑指 Offer 66. 构建乘积数组
 
-# `23. 二叉搜索树`
+### `23. 二叉搜索树`
 
 >* 剑指 Offer 68 - I. 二叉搜索树的最近公共祖先
 >* 剑指 Offer 68 - II. 二叉树的最近公共祖先
 >* 二叉树的下一个结点
 
-# Donate
+### Donate
 
 如果本仓库对你有帮助，可以请作者喝杯速溶咖啡,给大家推荐个Google大佬的算法课程。
 
