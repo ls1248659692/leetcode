@@ -58,6 +58,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/leetcode_problems/leetcode/editor/cn/[917]仅仅反转字母.py">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/leetcode_problems/leetcode/editor/cn/doc/content/[917]仅仅反转字母.md" />
+              <option name="frontendQuestionId" value="leetcode-cn.com917" />
+              <option name="host" value="leetcode-cn.com" />
+              <option name="path" value="$PROJECT_DIR$/leetcode_problems/leetcode/editor/cn/[917]仅仅反转字母.py" />
+              <option name="titleSlug" value="reverse-only-letters" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
       </map>
     </option>
   </component>
