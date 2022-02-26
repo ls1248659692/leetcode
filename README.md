@@ -57,7 +57,7 @@
 ### 不同算法类型
 >1. [滑动窗口](https://github.com/ls1248659692/leetcode/tree/master/algorithm_templates/sliding_window)
 >2. [双指针](https://github.com/ls1248659692/leetcode/tree/master/algorithm_templates/two_pointers)
->3. [快慢指针-链表]((https://github.com/ls1248659692/leetcode/tree/master/algorithm_templates/linked_list))
+>3. [快慢指针链表]((https://github.com/ls1248659692/leetcode/tree/master/algorithm_templates/linked_list))
 >4. [集合查找](https://github.com/ls1248659692/leetcode/tree/master/algorithm_templates/union_find)
 >5. [二叉树](https://github.com/ls1248659692/leetcode/tree/master/algorithm_templates/trie_tree)
 >6. [字符串](https://github.com/ls1248659692/leetcode/tree/master/algorithm_templates/string)
