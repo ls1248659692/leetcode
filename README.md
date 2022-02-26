@@ -6,9 +6,11 @@
 本仓库的 leetcode 文件夹下都是基于 LeetCode 的题目，涵盖了所有题型和技巧，而且一定要做到**举一反三，通俗易懂**，[算法体系化学习书籍和面试题](https://github.com/ls1248659692/leetcode/tree/master/book)有相关算法系统学习书籍和题目推荐。
 
 **刷题的最高境界：**
-> 阿里霜神大佬，说过刷 leetcode 最高境界要追求 beats 100% ，如果不能达到 beats 100%，纯粹只是追求AC，那你仅仅只是合格的算法者。霜神也用Go实现了leetcode的所有题目全部beats 100%，[LeetCode相关书籍链接](https://books.halfrost.com/leetcode/) 
+> 阿里霜神大佬，说过刷 leetcode 最高境界要追求 beats 100% ，如果不能达到 beats 100%，纯粹只是追求AC，那你仅仅只是合格的算法者。霜神也用Go实现了leetcode的所有题目全部beats 100%，[LeetCode相关书籍](https://books.halfrost.com/leetcode/) 
+
 > 为何要追求 beats 100%。霜神大佬认为优化到 beats 100% 才算是把这题做出感觉了。有好几道 Hard 题，霜神大佬都用暴力解法 AC 了，然后只 beats 了 5%。他感觉这题就如同没做一样。而且面试中如果给了这样的答案，面试官也不会满意，“还有没有更优解？”。如果通过自己的思考能给出更优解，面试官会更满意一些。
-> 霜神大佬很多题用正确的代码连续交了很多次，主要是为了对比，代码从暴力破解后逐渐优化的过程，性能的对比直到beats 100%，一年总共提交 3400+ 次，导致我的正确率也变的奇高（本人目前刷leetcode也是学习这种方法从暴力破解后，想着法子优化题解，每每beats 100% 内心也是无比的激动）。
+
+> 霜神大佬很多题用正确的代码连续交了很多次，主要是为了对比每一题代码从暴力破解后逐渐优化和性能的对比，直到beats 100%。 一年总共提交 3400+ 次，导致正确率也变的奇高。（本人目前刷leetcode也是学习这种方法从暴力破解后，想着法子优化题解，每每 beats 100% 内心也是无比的激动）。
 
 ## Leetcode 算法题刷题总结
 1. 职业训练：拆分知识点、刻意联系、反馈
@@ -48,35 +50,37 @@
 
 ## 算法题汇总
 
-20 个最常用的、最基础数据结构与算法
+20 个最常用的、最基础数据结构与算法，都已经总结在 [算法题模板分类](https://github.com/ls1248659692/leetcode/tree/master/algorithm_templates)
 10 个必考数据结构模板：数组、链表、栈、队列、散列表、二叉树、堆、跳表、图、Trie 树。
 10 个必会算法模板：递归、排序、二分查找、搜索、哈希算法、贪心算法、分治算法、回溯算法、动态规划、字符串匹配算法。
 
-
 ### 不同算法类型
->1. 滑动窗口
->2. 双指针
->3. 快慢指针/ 链表题目
->4. 原地链表翻转
->5. 区间合并
->6. 无序限定范围的数组元素查找O(N）
->7. BFS
->8. 树的DFS
->9. DFS/递归/回溯法
->10. 双堆模式
->11. 二分法与二分法变种
->12. 前K大的数模式HEAP
->13. K路归并
->14. DP 动态规划
->15. 排序算法
->16. 树和链表结合
->17. 树的重新构建
->18. 位运算
->19. 字符串
->20. stack
->21. math
->22. array
->23. 二叉搜索树
+>1. [滑动窗口](https://github.com/ls1248659692/leetcode/tree/master/algorithm_templates/sliding_window)
+>2. [双指针](https://github.com/ls1248659692/leetcode/tree/master/algorithm_templates/two_pointers)
+>3. [快慢指针/ 链表题目]((https://github.com/ls1248659692/leetcode/tree/master/algorithm_templates/linked_list))
+>4. [集合查找](https://github.com/ls1248659692/leetcode/tree/master/algorithm_templates/union_find)
+>5. [二叉树](https://github.com/ls1248659692/leetcode/tree/master/algorithm_templates/trie_tree)
+>6. [字符串](https://github.com/ls1248659692/leetcode/tree/master/algorithm_templates/string)
+>7. [DFS](https://github.com/ls1248659692/leetcode/tree/master/algorithm_templates/dfs)
+>8. [BFS](https://github.com/ls1248659692/leetcode/tree/master/algorithm_templates/bfs)
+>9. [回溯法](https://github.com/ls1248659692/leetcode/tree/master/algorithm_templates/backtracking)
+>10. [双堆模式](https://github.com/ls1248659692/leetcode/tree/master/algorithm_templates/heap)
+>11. [二分法与二分法变种](https://github.com/ls1248659692/leetcode/tree/master/algorithm_templates/binary_search)
+>12. [前K大的数模式HEAP](https://github.com/ls1248659692/leetcode/tree/master/algorithm_templates/heap)
+>13. [分治思想](https://github.com/ls1248659692/leetcode/tree/master/algorithm_templates/divide_conquer)
+>14. [DP 动态规划](https://github.com/ls1248659692/leetcode/tree/master/algorithm_templates/dynamic_programming)
+>15. [排序算法](https://github.com/ls1248659692/leetcode/tree/master/algorithm_templates/sort)
+>16. [链表](https://github.com/ls1248659692/leetcode/tree/master/algorithm_templates/linked_list)
+>17. [二叉搜索树的构建](https://github.com/ls1248659692/leetcode/tree/master/algorithm_templates/binary_tree)
+>18. [位运算](https://github.com/ls1248659692/leetcode/tree/master/algorithm_templates/bit_manipulation)
+>19. 字符串-[dict](https://github.com/ls1248659692/leetcode/tree/master/algorithm_templates/dict)
+>20. [stack](https://github.com/ls1248659692/leetcode/tree/master/algorithm_templates/stack)/[queue](https://github.com/ls1248659692/leetcode/tree/master/algorithm_templates/queue)
+>21. [math](https://github.com/ls1248659692/leetcode/tree/master/algorithm_templates/match)
+>22. [array](https://github.com/ls1248659692/leetcode/blob/master/algorithm_templates/array/array_examples.py)
+>23. [一般算法题模板](https://github.com/ls1248659692/leetcode/tree/master/algorithm_templates/common)
+>24. [图](https://github.com/ls1248659692/leetcode/tree/master/algorithm_templates/graph)
+>25. [贪婪算法](https://github.com/ls1248659692/leetcode/tree/master/algorithm_templates/greedy)
+>26. [matrix](https://github.com/ls1248659692/leetcode/tree/master/algorithm_templates/matrix)
 
 ## 题型汇总
 
