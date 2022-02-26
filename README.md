@@ -57,7 +57,7 @@
 ### 不同算法类型
 >1. [滑动窗口](https://github.com/ls1248659692/leetcode/tree/master/algorithm_templates/sliding_window)
 >2. [双指针](https://github.com/ls1248659692/leetcode/tree/master/algorithm_templates/two_pointers)
->3. [快慢指针/ 链表题目]((https://github.com/ls1248659692/leetcode/tree/master/algorithm_templates/linked_list))
+>3. [快慢指针-链表]((https://github.com/ls1248659692/leetcode/tree/master/algorithm_templates/linked_list))
 >4. [集合查找](https://github.com/ls1248659692/leetcode/tree/master/algorithm_templates/union_find)
 >5. [二叉树](https://github.com/ls1248659692/leetcode/tree/master/algorithm_templates/trie_tree)
 >6. [字符串](https://github.com/ls1248659692/leetcode/tree/master/algorithm_templates/string)
@@ -73,14 +73,14 @@
 >16. [链表](https://github.com/ls1248659692/leetcode/tree/master/algorithm_templates/linked_list)
 >17. [二叉搜索树的构建](https://github.com/ls1248659692/leetcode/tree/master/algorithm_templates/binary_tree)
 >18. [位运算](https://github.com/ls1248659692/leetcode/tree/master/algorithm_templates/bit_manipulation)
->19. 字符串-[dict](https://github.com/ls1248659692/leetcode/tree/master/algorithm_templates/dict)
+>19. [dict](https://github.com/ls1248659692/leetcode/tree/master/algorithm_templates/dict)
 >20. [stack](https://github.com/ls1248659692/leetcode/tree/master/algorithm_templates/stack)/[queue](https://github.com/ls1248659692/leetcode/tree/master/algorithm_templates/queue)
 >21. [math](https://github.com/ls1248659692/leetcode/tree/master/algorithm_templates/match)
 >22. [array](https://github.com/ls1248659692/leetcode/blob/master/algorithm_templates/array/array_examples.py)
->23. [一般算法题模板](https://github.com/ls1248659692/leetcode/tree/master/algorithm_templates/common)
->24. [图](https://github.com/ls1248659692/leetcode/tree/master/algorithm_templates/graph)
->25. [贪婪算法](https://github.com/ls1248659692/leetcode/tree/master/algorithm_templates/greedy)
->26. [matrix](https://github.com/ls1248659692/leetcode/tree/master/algorithm_templates/matrix)
+>23. [图](https://github.com/ls1248659692/leetcode/tree/master/algorithm_templates/graph)
+>24. [贪婪算法](https://github.com/ls1248659692/leetcode/tree/master/algorithm_templates/greedy)
+>25. [matrix](https://github.com/ls1248659692/leetcode/tree/master/algorithm_templates/matrix)
+>26. [一般算法题模板](https://github.com/ls1248659692/leetcode/tree/master/algorithm_templates/common)
 
 ## 题型汇总
 
