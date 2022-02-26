@@ -261,7 +261,7 @@
 
 
 ### 算法和数据结构(学习相关书籍推荐)
->
+
 >- 算法图解.pdf  [百度云下载链接](https://pan.baidu.com/s/1dhEy_uvJYoqehdvYnHzoBg)  密码:lk0v
 >- 算法第四版.pdf  [百度云下载链接](https://pan.baidu.com/s/1b89HDicDLsCC_qg894FUvA)  密码:gsjc
 >- 算法导论第三版.pdf  [百度云下载链接](https://pan.baidu.com/s/1ljP9Qwg5RqL_4LzrYK9jrA)  密码:qans
@@ -273,6 +273,9 @@
 >- 背包九讲.pdf  [百度云下载链接](https://pan.baidu.com/s/13-ov__8xJ_SSxCmhkP4iSQ)  密码:he90
 >- 啊哈算法.pdf  [百度云下载链接](https://pan.baidu.com/s/1vO9c3T3v89krlMsWEGDQCw)  密码:h89a
 >- Algorithms, 4th Edition(算法，第四版).pdf  [百度云下载链接](https://pan.baidu.com/s/1ugDCe6ISRoa1Zi3UGW5Ncw)  密码:ipni
+>- 《LeetCode101（谷歌师兄刷题笔记）》[百度网盘链接](https://pan.baidu.com/s/1PERa4bL7K-FoXit5440YNQ)  密码: 14fn
+>- 《第二份谷歌刷题笔记》 [百度网盘链接](https://pan.baidu.com/s/1HMJvHjB964OpwtHAJQrPQw)  密码: k70j
+>-  阿里霜神-《LeetCode刷题手册》 [百度网盘链接](https://pan.baidu.com/s/1817n69g0eOj7fptRpdR3kQ)  密码: fwtn
 
 
 ### Donate
