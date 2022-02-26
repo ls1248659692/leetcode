@@ -259,6 +259,23 @@
 >* 剑指 Offer 68 - II. 二叉树的最近公共祖先
 >* 二叉树的下一个结点
 
+
+### 算法和数据结构(学习相关书籍推荐)
+
+- 算法图解.pdf  [百度云下载链接](https://pan.baidu.com/s/1dhEy_uvJYoqehdvYnHzoBg)  密码:lk0v
+- 算法第四版.pdf  [百度云下载链接](https://pan.baidu.com/s/1b89HDicDLsCC_qg894FUvA)  密码:gsjc
+- 算法导论第三版.pdf  [百度云下载链接](https://pan.baidu.com/s/1ljP9Qwg5RqL_4LzrYK9jrA)  密码:qans
+- 数据结构与算法经典问题解析Java语言描述.pdf  [百度云下载链接](https://pan.baidu.com/s/1cXLrpad3Z-huk5otPVMMjg)  密码:m7ef
+- 数据结构与算法分析:C语言描述_原书第2版.pdf  [百度云下载链接](https://pan.baidu.com/s/1MudCT3RNO9I991surooqgg)  密码:1w5g
+- 大话数据结构.pdf  [百度云下载链接](https://pan.baidu.com/s/1dyH64h2603-ag8Yk6UM94w)  密码:h5du
+- 编程之美——微软技术面试心得.pdf  [百度云下载链接](https://pan.baidu.com/s/1r1VkAgh03G5Zfha35coyrg)  密码:rcpv
+- 编程之法.pdf  [百度云下载链接](https://pan.baidu.com/s/1jbypY-mQxJ1M1Hz97ptFjQ)  密码:0cv3
+
+- 背包九讲.pdf  [百度云下载链接](https://pan.baidu.com/s/13-ov__8xJ_SSxCmhkP4iSQ)  密码:he90
+- 啊哈算法.pdf  [百度云下载链接](https://pan.baidu.com/s/1vO9c3T3v89krlMsWEGDQCw)  密码:h89a
+- Algorithms, 4th Edition(算法，第四版).pdf  [百度云下载链接](https://pan.baidu.com/s/1ugDCe6ISRoa1Zi3UGW5Ncw)  密码:ipni
+
+
 ### Donate
 
 如果本仓库对你有帮助，可以请作者喝杯速溶咖啡,给大家推荐个Google大佬的算法课程。
