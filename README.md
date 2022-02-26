@@ -57,7 +57,7 @@
 ### 不同算法类型
 >1. [滑动窗口](https://github.com/ls1248659692/leetcode/tree/master/algorithm_templates/sliding_window)
 >2. [双指针](https://github.com/ls1248659692/leetcode/tree/master/algorithm_templates/two_pointers)
->3. [快慢指针链表]((https://github.com/ls1248659692/leetcode/tree/master/algorithm_templates/linked_list))
+>3. [快慢指针链表](https://github.com/ls1248659692/leetcode/tree/master/algorithm_templates/linked_list)
 >4. [集合查找](https://github.com/ls1248659692/leetcode/tree/master/algorithm_templates/union_find)
 >5. [二叉树](https://github.com/ls1248659692/leetcode/tree/master/algorithm_templates/trie_tree)
 >6. [字符串](https://github.com/ls1248659692/leetcode/tree/master/algorithm_templates/string)
@@ -90,6 +90,7 @@
 >3. Longest Substring Without Repeating Characters
 >239. Sliding Window Maximum
 >* 剑指 Offer 57 - II. 和为s的连续正数序列
+
 
 ### `2. 双指针`
 >双指针通常用在排好序的数组或是链表中寻找对子, 或者是merge 或者是排序，或者去除element，反正一般都是头尾各一个指针，然后根据条件移动。
