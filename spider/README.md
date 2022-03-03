@@ -45,26 +45,26 @@ optional arguments:
 | c     | code       | str  | 生成AC代码文件存入路径 |
 | u     | username   | str  | Leetcode 账号名       |
 | p     | password   | str  | Leetcode 密码         |
-| v     | password   | bool | 是否输出配置，默认不输出 |
+| v     | problems     | bool | 是否输出配置，默认不输出 |
 
 **注：若指定了题目状态或者要爬取 AC 代码，必须要提供用户账号密码信息参数**
 
 ## 示例
 
-爬取简单难度的题目，并输出配置，生成 README.md 到 output 目录中
+爬取简单难度的题目，并输出配置，生成 README.md 到 problems 目录中
 
 ``` shell
-python3 leetcode-crawler.py output -d Easy -v
+python3 leetcode_crawler.py problems -d Easy -v
 ```
 
-爬取标签为 “Hash Table”，难度为简单的题目，生成文档到 output 目录中
+爬取标签为 “Hash Table”，难度为简单的题目，生成文档到 problems 目录中
 
 ``` shell
-python3 leetcode-crawler.py output -t "Hash Table" -d Easy
+python3 leetcode_crawler.py problems -t "Hash Table" -d Easy
 ```
 
-爬取所有 AC 的题目，生成文档到 output 目录中，生成代码文件到 code 目录中
+爬取所有 AC 的题目，生成文档到 problems 目录中，生成代码文件到 code 目录中
 
 ``` shell
-python3 leetcode-crawler.py output -s ac -c code -u username -p password
+python3 leetcode_crawler.py problems -s ac -c code -u username -p password
 ```
