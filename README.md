@@ -484,6 +484,3 @@ def start_end_sliding_window(self, seq):
 ### Donate
 
 如果本仓库对你有帮助，可以请作者喝杯速溶咖啡,给大家推荐个Google大佬的算法课程。
-
-![image](https://user-images.githubusercontent.com/33345911/154845820-16947fe4-c922-4700-9da9-5a765440d58a.png)
-
