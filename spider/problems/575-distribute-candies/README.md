@@ -37,4 +37,18 @@ Alice 有 `n` 枚糖，其中第 `i` 枚糖的类型为 `candyType[i]` 。Alice 
 
 ## 思路
 
+``` python3
+class Solution:
+    def distributeCandies(self, candyType: List[int]) -> int:
+        #knli = sorted([candyType.count(kn) for kn in set(candyType)],reverse=False)
+        dc = {}
+        for c in candyType:
+            dc.setdefault(c,0)
+            dc[c]+=1
+        knli= list(dc.keys())
+        print(knli)
+
+        return  len(knli[:len(candyType)//2])
+```
+
 [title]: https://leetcode-cn.com/problems/distribute-candies

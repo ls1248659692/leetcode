@@ -38,4 +38,17 @@
 
 ## 思路
 
+``` python3
+class Solution:
+    def specialArray(self, nums: List[int]) -> int:
+        for i in range(max(nums)+1):
+            cnt = 0
+            for j in nums:
+                if j >= i:
+                    cnt = cnt + 1
+            if cnt == i:
+                return i
+        return -1
+```
+
 [title]: https://leetcode-cn.com/problems/special-array-with-x-elements-greater-than-or-equal-x

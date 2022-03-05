@@ -35,4 +35,10 @@
 
 ## 思路
 
+``` python3
+class Solution:
+    def findLUSlength(self, a: str, b: str) -> int:
+        return max(len(a),len(b)) if a!= b else -1
+```
+
 [title]: https://leetcode-cn.com/problems/longest-uncommon-subsequence-i

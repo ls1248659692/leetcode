@@ -19,4 +19,10 @@
 
 ## 思路
 
+``` python3
+class Solution:
+    def smallestK(self, arr: List[int], k: int) -> List[int]:
+        return sorted(arr)[:k]
+```
+
 [title]: https://leetcode-cn.com/problems/smallest-k-lcci

@@ -34,4 +34,10 @@
 
 ## 思路
 
+``` python3
+class Solution:
+    def isPowerOfTwo(self, n: int) -> bool:
+        return n in [2**i for i in range(32)]
+```
+
 [title]: https://leetcode-cn.com/problems/power-of-two

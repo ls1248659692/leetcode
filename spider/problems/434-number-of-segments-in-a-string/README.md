@@ -16,4 +16,10 @@
 
 ## 思路
 
+``` python3
+class Solution:
+    def countSegments(self, s: str) -> int:
+        return len([wd for wd in s.split() if wd])
+```
+
 [title]: https://leetcode-cn.com/problems/number-of-segments-in-a-string

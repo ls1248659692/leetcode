@@ -49,4 +49,11 @@ upload/uploads/2019/09/08/untitled-diagram-1-2.jpg)
 
 ## 思路
 
+``` python3
+class Solution:
+    def distanceBetweenBusStops(self, distance: List[int], start: int, destination: int) -> int:
+        ans = sum(distance[destination: start])  if start > destination else sum(distance[start: destination])
+        return min(ans, sum(distance)-ans)
+```
+
 [title]: https://leetcode-cn.com/problems/distance-between-bus-stops

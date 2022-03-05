@@ -28,4 +28,11 @@
 
 ## 思路
 
+``` python3
+class Solution:
+    def minMoves(self, nums: List[int]) -> int:
+        mi = min(nums)
+        return sum(n-mi for n in nums)
+```
+
 [title]: https://leetcode-cn.com/problems/minimum-moves-to-equal-array-elements

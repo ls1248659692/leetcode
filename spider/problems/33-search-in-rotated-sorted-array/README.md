@@ -37,4 +37,10 @@
 
 ## 思路
 
+``` python3
+class Solution:
+    def search(self, nums: List[int], target: int) -> int:
+        return nums.index(target) if target in nums else -1
+```
+
 [title]: https://leetcode-cn.com/problems/search-in-rotated-sorted-array

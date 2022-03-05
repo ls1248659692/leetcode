@@ -24,4 +24,9 @@
 
 ## 思路
 
+``` mysql
+# Write your MySQL query statement below
+select * from cinema where description !='boring' and id%2=1 order by rating desc
+```
+
 [title]: https://leetcode-cn.com/problems/not-boring-movies

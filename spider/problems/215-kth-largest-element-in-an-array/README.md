@@ -24,4 +24,11 @@
 
 ## 思路
 
+``` python3
+class Solution:
+    def findKthLargest(self, nums: List[int], k: int) -> int:
+        r =sorted(nums)
+        return r[-k]
+```
+
 [title]: https://leetcode-cn.com/problems/kth-largest-element-in-an-array

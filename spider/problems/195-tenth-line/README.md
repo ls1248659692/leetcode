@@ -23,4 +23,9 @@
 
 ## 思路
 
+``` bash
+# Read from the file file.txt and output the tenth line to stdout
+sed -n '10p' file.txt
+```
+
 [title]: https://leetcode-cn.com/problems/tenth-line

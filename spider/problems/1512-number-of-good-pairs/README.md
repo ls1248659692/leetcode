@@ -33,4 +33,10 @@
 
 ## 思路
 
+``` python3
+class Solution:
+    def numIdenticalPairs(self, nums: List[int]) -> int:
+        return sum(nums.count(n)*(nums.count(n)-1)//2 for n in set(nums))
+```
+
 [title]: https://leetcode-cn.com/problems/number-of-good-pairs

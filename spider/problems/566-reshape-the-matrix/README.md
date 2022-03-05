@@ -40,4 +40,11 @@ c`）的新矩阵，但保留其原始数据。
 
 ## 思路
 
+``` python3
+class Solution:
+    def matrixReshape(self, mat: List[List[int]], r: int, c: int) -> List[List[int]]:
+        rli = [e for row in mat for e in row]
+        return [rli[i*c: i*c+c] for i in range(r)] if r*c==len(rli) else mat
+```
+
 [title]: https://leetcode-cn.com/problems/reshape-the-matrix

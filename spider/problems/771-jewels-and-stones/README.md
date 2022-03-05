@@ -30,4 +30,10 @@
 
 ## 思路
 
+``` python3
+class Solution:
+    def numJewelsInStones(self, jewels: str, stones: str) -> int:
+        return len ([s for s in stones if s in jewels])
+```
+
 [title]: https://leetcode-cn.com/problems/jewels-and-stones

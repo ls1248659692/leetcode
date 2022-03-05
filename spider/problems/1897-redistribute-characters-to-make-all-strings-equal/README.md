@@ -28,4 +28,11 @@
 
 ## 思路
 
+``` python3
+class Solution:
+    def makeEqual(self, words: List[str]) -> bool:
+        wds= ''.join(words)
+        return len([c for c in set(list(wds)) if wds.count(c)%len(words)!=0])==0
+```
+
 [title]: https://leetcode-cn.com/problems/redistribute-characters-to-make-all-strings-equal

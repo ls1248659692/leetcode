@@ -41,4 +41,20 @@ upload/uploads/2019/12/15/graph-1.png)
 
 ## 思路
 
+``` python3
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def getDecimalValue(self, head: ListNode) -> int:
+        s =''
+        while head.next:
+            s+= str(head.val)
+            head=head.next
+        s+= str(head.val)
+        return int(s, base=2)
+```
+
 [title]: https://leetcode-cn.com/problems/convert-binary-number-in-a-linked-list-to-integer

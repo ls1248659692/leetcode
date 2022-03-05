@@ -45,4 +45,16 @@ nums[middleIndex+1] + nums[middleIndex+2] + ... + nums[nums.length-1]` 的数组
 
 ## 思路
 
+``` python3
+class Solution:
+    def findMiddleIndex(self, nums: List[int]) -> int:
+        c,su= 0,sum(nums)
+        for i in range(len(nums)):
+            if c ==su-nums[i]-c:
+                return i
+            c = c+nums[i]
+        return -1
+
+```
+
 [title]: https://leetcode-cn.com/problems/find-the-middle-index-in-array

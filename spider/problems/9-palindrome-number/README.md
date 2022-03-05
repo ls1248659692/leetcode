@@ -36,4 +36,10 @@
 
 ## 思路
 
+``` python3
+class Solution:
+    def isPalindrome(self, x: int) -> bool:
+        return str(x)==''.join(reversed(list(str(x))))
+```
+
 [title]: https://leetcode-cn.com/problems/palindrome-number

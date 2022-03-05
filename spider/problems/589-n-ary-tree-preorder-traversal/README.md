@@ -36,4 +36,26 @@ n 叉树 在输入中按层序遍历进行序列化表示，每组子节点由�
 
 ## 思路
 
+``` python3
+"""
+# Definition for a Node.
+class Node:
+    def __init__(self, val=None, children=None):
+        self.val = val
+        self.children = children
+"""
+
+class Solution:
+    def preorder(self, root: 'Node') -> List[int]:
+        def tr(nd):
+            res = [nd.val]
+            for ch in nd.children:
+                res += tr(ch)
+            return res
+        if not root: return []
+        tli = tr(root)
+        print (tli)
+        return tli
+```
+
 [title]: https://leetcode-cn.com/problems/n-ary-tree-preorder-traversal

@@ -22,4 +22,10 @@
 
 ## 思路
 
+``` python3
+class Solution:
+    def isUnique(self, astr: str) -> bool:
+        return len(set(list(astr)))==len(astr)
+```
+
 [title]: https://leetcode-cn.com/problems/is-unique-lcci

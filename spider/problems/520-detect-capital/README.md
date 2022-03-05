@@ -32,4 +32,10 @@
 
 ## 思路
 
+``` python3
+class Solution:
+    def detectCapitalUse(self, word: str) -> bool:
+        return word == word.lower() or word[0].lower()+word[1:]==word.lower() or word == word.upper()
+```
+
 [title]: https://leetcode-cn.com/problems/detect-capital

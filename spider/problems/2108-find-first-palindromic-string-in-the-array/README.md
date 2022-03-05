@@ -33,4 +33,10 @@
 
 ## 思路
 
+``` python3
+class Solution:
+    def firstPalindrome(self, words: List[str]) -> str:
+        return [wd for wd in words if wd==wd[::-1]][0] if [wd for wd in words if wd==wd[::-1]] else ''
+```
+
 [title]: https://leetcode-cn.com/problems/find-first-palindromic-string-in-the-array

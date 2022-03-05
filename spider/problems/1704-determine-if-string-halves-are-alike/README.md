@@ -35,4 +35,10 @@
 
 ## 思路
 
+``` python3
+class Solution:
+    def halvesAreAlike(self, s: str) -> bool:
+        return sum([ 1 for ss in s[:len(s)//2] if ss in 'AEIOUaeiou'])==sum([ 1 for ss in s[len(s)//2:]if ss in 'AEIOUaeiou'])
+```
+
 [title]: https://leetcode-cn.com/problems/determine-if-string-halves-are-alike

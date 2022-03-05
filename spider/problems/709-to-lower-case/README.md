@@ -25,4 +25,10 @@
 
 ## 思路
 
+``` python3
+class Solution:
+    def toLowerCase(self, s: str) -> str:
+        return s.lower()
+```
+
 [title]: https://leetcode-cn.com/problems/to-lower-case

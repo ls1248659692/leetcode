@@ -39,4 +39,10 @@
 
 ## 思路
 
+``` python3
+class Solution:
+    def balancedStringSplit(self, s: str) -> int:
+       return sum([s[:i].count('L')==s[:i].count('R') for i in range(len(s))])
+```
+
 [title]: https://leetcode-cn.com/problems/split-a-string-in-balanced-strings

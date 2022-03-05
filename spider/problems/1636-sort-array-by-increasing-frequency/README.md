@@ -27,4 +27,11 @@
 
 ## 思路
 
+``` python3
+class Solution:
+    def frequencySort(self, nums: List[int]) -> List[int]:
+        return sorted(nums, key=lambda x: (nums.count(x), -x))
+
+```
+
 [title]: https://leetcode-cn.com/problems/sort-array-by-increasing-frequency

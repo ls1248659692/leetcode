@@ -51,17 +51,12 @@ optional arguments:
 
 ## 示例
 
-爬取简单难度的题目，并输出配置，生成 README.md 到 problems 目录中
+有些会员题需要权限才能爬取题目，每次爬取前需要获取下 LEETCODE_SESSION 避免权限认证失败，生成 README.md 到 problems 目录中
 
 ``` shell
-python3 leetcode_crawler.py problems -d Easy -v
+python3 leetcode_crawler.py problems -v -u username -p password
 ```
 
-爬取标签为 “Hash Table”，难度为简单的题目，生成文档到 problems 目录中
-
-``` shell
-python3 leetcode_crawler.py problems -t "Hash Table" -d Easy
-```
 
 爬取所有 AC 的题目，生成文档到 problems 目录中，生成代码文件到 code 目录中
 

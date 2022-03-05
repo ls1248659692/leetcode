@@ -25,4 +25,10 @@
 
 ## 思路
 
+``` python3
+class Solution:
+    def countOdds(self, low: int, high: int) -> int:
+        return (high-high%2-low-low%2)//2  + high%2  + low%2 
+```
+
 [title]: https://leetcode-cn.com/problems/count-odd-numbers-in-an-interval-range

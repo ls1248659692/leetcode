@@ -38,4 +38,13 @@
 
 ## 思路
 
+``` python3
+class Solution:
+    def isPrefixOfWord(self, sentence: str, searchWord: str) -> int:
+        se,sw = sentence.split(),searchWord
+        for i in range(len(se)):
+            if len(se[i])>=len(sw) and se[i][:len(sw)] ==sw: return i+1
+        return -1
+```
+
 [title]: https://leetcode-cn.com/problems/check-if-a-word-occurs-as-a-prefix-of-any-word-in-a-sentence

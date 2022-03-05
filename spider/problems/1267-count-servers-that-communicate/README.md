@@ -45,4 +45,16 @@ upload/uploads/2019/11/24/untitled-diagram-1-3.jpg)
 
 ## 思路
 
+``` python3
+class Solution:
+    def countServers(self, grid: List[List[int]]) -> int:
+        cnt,g,m,n,gt = 0,grid,len(grid),len(grid[0]),list(zip(*grid))
+        for i in range(m):
+            for j in range(n):
+                if g[i][j] == 1:
+                    if g[i].count(1) + gt[j].count(1) > 2:
+                        cnt += 1
+        return cnt
+```
+
 [title]: https://leetcode-cn.com/problems/count-servers-that-communicate

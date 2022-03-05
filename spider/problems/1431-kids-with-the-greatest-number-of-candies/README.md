@@ -33,4 +33,11 @@
 
 ## 思路
 
+``` python3
+class Solution:
+    def kidsWithCandies(self, candies: List[int], extraCandies: int) -> List[bool]:
+        mx= max(candies)
+        return [e+extraCandies>=mx for e in candies]
+```
+
 [title]: https://leetcode-cn.com/problems/kids-with-the-greatest-number-of-candies

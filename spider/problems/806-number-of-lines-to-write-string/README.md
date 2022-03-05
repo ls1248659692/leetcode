@@ -25,4 +25,16 @@ widths[1] 代表 'b' 需要的单位，...， widths[25] 代表 'z' 需要的单
 
 ## 思路
 
+``` python3
+class Solution:
+    def numberOfLines(self, widths: List[int], s: str) -> List[int]:
+        line,cum,n=1,0,0
+        
+        for ch in s:
+            n=widths[ord(ch)-ord('a')]
+            if cum+ n>100: line,cum =line+1,n
+            else: cum = cum+n
+        return line,cum
+```
+
 [title]: https://leetcode-cn.com/problems/number-of-lines-to-write-string

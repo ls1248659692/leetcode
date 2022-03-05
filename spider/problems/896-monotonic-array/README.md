@@ -34,4 +34,10 @@ j`，`nums[i]> = nums[j]`，那么数组 `nums` 是单调递减的。
 
 ## 思路
 
+``` python3
+class Solution:
+    def isMonotonic(self, nums: List[int]) -> bool:
+        return nums==sorted(nums) or nums ==sorted(nums,reverse=True)
+```
+
 [title]: https://leetcode-cn.com/problems/monotonic-array

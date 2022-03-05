@@ -29,4 +29,10 @@
 
 ## 思路
 
+``` python3
+class Solution:
+    def interpret(self, command: str) -> str:
+        return command.replace('()','o').replace('(al)','al')
+```
+
 [title]: https://leetcode-cn.com/problems/goal-parser-interpretation

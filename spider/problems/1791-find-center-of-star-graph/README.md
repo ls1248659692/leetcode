@@ -33,4 +33,12 @@ upload/uploads/2021/03/14/star_graph.png)
 
 ## 思路
 
+``` python3
+class Solution:
+    def findCenter(self, edges: List[List[int]]) -> int:
+        for i in edges[0]:
+            if i in edges[1]:
+                return i
+```
+
 [title]: https://leetcode-cn.com/problems/find-center-of-star-graph

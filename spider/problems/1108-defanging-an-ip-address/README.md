@@ -28,4 +28,10 @@
 
 ## 思路
 
+``` python3
+class Solution:
+    def defangIPaddr(self, address: str) -> str:
+        return address.replace('.','[.]')
+```
+
 [title]: https://leetcode-cn.com/problems/defanging-an-ip-address

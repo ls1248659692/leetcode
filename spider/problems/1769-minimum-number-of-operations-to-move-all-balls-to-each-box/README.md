@@ -31,4 +31,14 @@
 
 ## 思路
 
+``` python3
+class Solution:
+    def minOperations(self, boxes: str) -> List[int]:
+        rli=[]
+        for i in range(len(boxes)):
+            rli.append(sum([abs(i-j) if boxes[j]=='1' and i!=j else 0 for j in range(len(boxes))]))
+        return rli
+
+```
+
 [title]: https://leetcode-cn.com/problems/minimum-number-of-operations-to-move-all-balls-to-each-box

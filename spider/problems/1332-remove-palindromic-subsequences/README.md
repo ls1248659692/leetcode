@@ -35,4 +35,10 @@
 
 ## 思路
 
+``` python3
+class Solution:
+    def removePalindromeSub(self, s: str) -> int:
+        return 1 if s == s[::-1] else 2
+```
+
 [title]: https://leetcode-cn.com/problems/remove-palindromic-subsequences

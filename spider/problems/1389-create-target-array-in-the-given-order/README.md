@@ -39,4 +39,13 @@
 
 ## 思路
 
+``` python3
+class Solution:
+    def createTargetArray(self, nums: List[int], index: List[int]) -> List[int]:
+        res = []
+        for i in range(len(nums)):
+            res.insert(index[i], nums[i])
+        return res
+```
+
 [title]: https://leetcode-cn.com/problems/create-target-array-in-the-given-order

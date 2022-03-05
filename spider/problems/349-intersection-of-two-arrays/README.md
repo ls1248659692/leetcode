@@ -27,4 +27,10 @@
 
 ## 思路
 
+``` python3
+class Solution:
+    def intersection(self, nums1: List[int], nums2: List[int]) -> List[int]:
+        return list(set(nums1).intersection(set(nums2)))
+```
+
 [title]: https://leetcode-cn.com/problems/intersection-of-two-arrays

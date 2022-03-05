@@ -14,6 +14,7 @@ import argparse, sys
 
 DB_PATH = 'leetcode.sqlite3'
 
+
 class LeetcodeCrawler():
     def __init__(self):
         self.session = requests.Session()
@@ -45,8 +46,11 @@ class LeetcodeCrawler():
         m = MultipartEncoder(params_data)
 
         headers['Content-Type'] = m.content_type
-        self.session.post(url, headers=headers, data=m, timeout=10, allow_redirects=False)
-        self.is_login = self.session.cookies.get('LEETCODE_SESSION') != None
+        result = self.session.post(url, headers=headers, data=m, timeout=10)
+        # todo 由于会员题目需要LEETCODE_SESSION 需要手动更新，避免获取不到会员题目
+        self.session.cookies.set('LEETCODE_SESSION',
+                                 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJfYXV0aF91c2VyX2lkIjoiNDI3MDkyMSIsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImF1dGhlbnRpY2F0aW9uLmF1dGhfYmFja2VuZHMuUGhvbmVBdXRoZW50aWNhdGlvbkJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiJkNGJmYzVhMmQ2NDJmYTZiN2FhNTI3MjAxOTJiM2EyODg1NjE4ZjdjYjZmZDY0MzRlN2MwMmQ1NTFjYWVjMGMzIiwiaWQiOjQyNzA5MjEsImVtYWlsIjoiIiwidXNlcm5hbWUiOiJsdW1vbi1mIiwidXNlcl9zbHVnIjoibHVtb24tZiIsImF2YXRhciI6Imh0dHBzOi8vYXNzZXRzLmxlZXRjb2RlLWNuLmNvbS9hbGl5dW4tbGMtdXBsb2FkL2RlZmF1bHRfYXZhdGFyLnBuZyIsInBob25lX3ZlcmlmaWVkIjp0cnVlLCJfdGltZXN0YW1wIjoxNjQ2NDUxMzYzLjYwOTE1MTgsImV4cGlyZWRfdGltZV8iOjE2NDkwMTI0MDAsInZlcnNpb25fa2V5XyI6MX0.-iMtta465ZsUeMVcWrgZZH1wKUoc4XdIRBxIIF3_uVk')
+        self.is_login = result.ok
         return self.is_login
 
     def get_problems(self, filters):
@@ -65,37 +69,17 @@ class LeetcodeCrawler():
             question_acs = question['stat']['total_acs']
             question_submits = question['stat']['total_submitted']
 
-            question_difficulty = "None"
-            level = question['difficulty']['level']
-
-            if level == 1:
-                question_difficulty = "Easy"
-            elif level == 2:
-                question_difficulty = "Medium"
-            elif level == 3:
-                question_difficulty = "Hard"
-
-            if filters.get('difficulty'):
-                if filters['difficulty'] != question_difficulty:
-                    continue
-
-            if filters.get('status'):
-                if filters['status'] != question_status:
-                    continue
-
-            if question['paid_only']:
-                continue
-
+            # 用于题目去重
             cursor.execute('SELECT status FROM question WHERE id = ?', (question_id,))
             result = cursor.fetchone()
-            print(result)
+            print(question_id, question_status)
             if not result:
                 IS_SUCCESS = False
                 conn = sqlite3.connect(DB_PATH, timeout=10)
                 while not IS_SUCCESS:
                     try:
                         # 休眠随机 1 - 2 秒，以免爬去频率过高被服务器禁掉
-                        time.sleep(random.randint(1,2))
+                        time.sleep(random.randint(1, 2))
                         cursor = conn.cursor()
 
                         headers = {'User-Agent': self.user_agent, 'Connection':
@@ -134,17 +118,20 @@ class LeetcodeCrawler():
                         for tag in content['data']['question']['topicTags']:
                             tags.append(tag['name'])
 
-                        if content['data']['question']['content'] != None:
+                        if content['data']['question']['content']:
+                            if content['data']['question']['translatedContent']:
+                                question_content = content['data']['question']['translatedContent']
+                            else:
+                                question_content = content['data']['question']['content']
                             question_detail = (questionId,
                                                content['data']['question']['questionFrontendId'],
                                                content['data']['question']['questionTitle'],
                                                content['data']['question']['questionTitleSlug'],
                                                content['data']['question']['difficulty'],
-                                               content['data']['question']['translatedContent'],
+                                               question_content,
                                                question_acs,
                                                question_submits,
                                                question_status)
-                            print(question_detail[0],question_detail[1])
                             cursor.execute(
                                 'INSERT INTO question (id, frontend_id, title, slug, difficulty, content, ac_num, submit_num, status) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)',
                                 question_detail)
@@ -157,9 +144,11 @@ class LeetcodeCrawler():
                             IS_SUCCESS = True
                     # 若出现连接超时或连接错误则继续获取
                     except (requests.exceptions.Timeout, requests.exceptions.ConnectionError) as error:
-                        print(str(error))
+                        print('error====>>', str(error))
 
-            elif self.is_login and question_status != result[0]:
+            elif self.is_login:
+                if not question_status:
+                    question_status = 'need_commit'
                 question_update_list.append((question_status, question_id))
 
         cursor.executemany('UPDATE question SET status = ? WHERE id = ?', question_update_list)
@@ -202,6 +191,17 @@ class LeetcodeCrawler():
                     (question_id      INT       NOT NULL,
                       tag         CHAR(30)      NOT NULL);''')
 
+        query_table_exists = "SELECT COUNT(*) FROM sqlite_master WHERE type='table' AND name = 'submission_record_log';"
+        cursor.execute(query_table_exists)
+        if cursor.fetchone()[0] == 0:
+            cursor.execute('''CREATE TABLE submission_record_log
+                    (id      INT PRIMARY KEY       NOT NULL,
+                     question_id      INT       NOT NULL,
+                     status_display         CHAR(20)      NOT NULL,
+                     language         CHAR(10)      NOT NULL,
+                     runtime            CHAR(10),
+                     timestamp          INT         NOT NULL);''')
+
         cursor.close()
 
     def generate_questions_markdown(self, path, filters):
@@ -222,6 +222,7 @@ class LeetcodeCrawler():
 
             if not self.filter_question(question_detail, filters):
                 continue
+
             tags = ''
             tag_cursor = self.conn.cursor()
             tag_cursor.execute('SELECT tag FROM question_tag WHERE question_id = ?', (row[0],))
@@ -260,15 +261,38 @@ class LeetcodeCrawler():
                 return False
         return True
 
+    def save_ac_question_submission_log(self, question_id, submissions):
+        cursor = self.conn.cursor()
+
+        for submission in submissions:
+            record_id = submission['id']
+            status_display = submission['statusDisplay']
+            language = submission['lang']
+            runtime = submission['runtime']
+            timestamp = submission['timestamp']
+            submission_record = (record_id, question_id, status_display, language, runtime, timestamp)
+
+            # 用于提交日志去重
+            cursor.execute('SELECT timestamp FROM submission_record_log WHERE id = ?', (record_id,))
+            result = cursor.fetchone()
+            if not result:
+                cursor.execute(
+                    'INSERT INTO submission_record_log (id, question_id, status_display, language, runtime, timestamp) VALUES (?, ?, ?, ?, ?, ?)',
+                    submission_record
+                )
+                print("insert submission_record_log[%s] success" % (record_id))
+                self.conn.commit()
+
+
     def get_ac_question_submission(self, filters):
         if not self.is_login:
             return
-        sql = "SELECT id,slug,difficulty,status FROM question WHERE status = 'ac';"
+        sql = "SELECT id,slug,difficulty,status FROM question WHERE status = 'ac' ;"
         cursor = self.conn.cursor()
         cursor.execute(sql)
         results = cursor.fetchall()
+        print(results)
 
-        slug_list = []
         for row in results:
             question_detail = {
                 'id': row[0],
@@ -279,10 +303,18 @@ class LeetcodeCrawler():
 
             if not self.filter_question(question_detail, filters):
                 continue
+
+            question_id = question_detail['id']
             slug = question_detail['slug']
-            slug_list.append(question_detail['slug'])
+            cursor.execute('SELECT timestamp FROM last_ac_submission_record WHERE question_slug = ?', (slug,))
+            result = cursor.fetchone()
+            if result:
+                print(result)
+                continue
+
             IS_SUCCESS = False
             while not IS_SUCCESS:
+                time.sleep(random.randint(2, 4))
                 try:
                     url = "https://leetcode-cn.com/graphql"
                     params = {'operationName': "Submissions",
@@ -306,51 +338,106 @@ class LeetcodeCrawler():
                         }'''
                               }
 
-                    json_data = json.dumps(params).encode('utf8')
-
+                    json_data = json.dumps(params).encode('utf-8')
                     headers = {'User-Agent': self.user_agent, 'Connection': 'keep-alive',
                                'Referer': 'https://leetcode-cn.com/accounts/login/',
                                "Content-Type": "application/json", 'x-csrftoken': self.csrftoken}
                     resp = self.session.post(url, data=json_data, headers=headers, timeout=10)
                     content = resp.json()
-                    for submission in content['data']['submissionList']['submissions']:
+                    print(content)
+                    submissions = content['data']['submissionList']['submissions']
+                    # 保存每题提交的日志记录
+                    self.save_ac_question_submission_log(question_id,submissions)
+
+                    for submission in submissions:
                         if submission['statusDisplay'] == "Accepted":
                             cursor.execute(
                                 "SELECT COUNT(*) FROM last_ac_submission_record WHERE id =" + str(submission['id']))
                             if cursor.fetchone()[0] == 0:
                                 IS_GET_SUBMISSION_SUCCESS = False
+                                code = ''
                                 while not IS_GET_SUBMISSION_SUCCESS:
-                                    code_content = self.session.get("https://leetcode-cn.com" + submission['url'],
-                                                                    headers=headers, timeout=10)
+                                    url = "https://leetcode-cn.com/graphql"
+                                    params = {"operationName": "mySubmissionDetail",
+                                              'variables': {"id": submission['id']},
+                                              'query': '''query mySubmissionDetail($id: ID!) {
+                                              submissionDetail(submissionId: $id) {
+                                                id
+                                                code
+                                                runtime
+                                                memory
+                                                rawMemory
+                                                statusDisplay
+                                                timestamp
+                                                lang
+                                                passedTestCaseCnt
+                                                totalTestCaseCnt
+                                                sourceUrl
+                                                question {
+                                                  titleSlug
+                                                  title
+                                                  translatedTitle
+                                                  questionId
+                                                  __typename
+                                                }
+                                                ... on GeneralSubmissionNode {
+                                                  outputDetail {
+                                                    codeOutput
+                                                    expectedOutput
+                                                    input
+                                                    compileError
+                                                    runtimeError
+                                                    lastTestcase
+                                                    __typename
+                                                  }
+                                                  __typename
+                                                }
+                                                submissionComment {
+                                                  comment
+                                                  flagType
+                                                  __typename
+                                                }
+                                                __typename
+                                              }
+                                            }'''}
 
-                                    pattern = re.compile(
-                                        r'submissionCode: \'(?P<code>.*)\',\n  editCodeUrl', re.S
-                                    )
-                                    m1 = pattern.search(code_content.text)
-                                    code = m1.groupdict()['code'] if m1 else None
+                                    json_data = json.dumps(params).encode('utf-8')
+                                    headers = {'User-Agent': self.user_agent, 'Connection': 'keep-alive',
+                                               'Referer': 'https://leetcode-cn.com/accounts/login/',
+                                               "Content-Type": "application/json", 'x-csrftoken': self.csrftoken}
+                                    time.sleep(random.randint(3, 4))
+                                    resp = self.session.post(url, data=json_data, headers=headers, timeout=10)
+                                    content = resp.json()
+                                    print(content)
+                                    code = content['data']['submissionDetail']['code']
+
                                     if not code:
                                         print('WARN: Can not get [{}] solution code'.format(slug))
+                                        time.sleep(random.randint(2, 4))
                                         continue
                                     IS_GET_SUBMISSION_SUCCESS = True
 
-                                submission_detail = (
-                                    submission['id'], slug, submission['timestamp'], submission['lang'],
-                                    submission['runtime'], code)
-                                cursor.execute(
-                                    "INSERT INTO last_ac_submission_record (id, question_slug, timestamp, language, runtime, code) VALUES(?, ?, ?, ?, ?, ?)",
-                                    submission_detail)
-                                print("insert submission[%s] success" % (submission['id']))
-                                self.conn.commit()
+                                # 用于提交通过记录去重
+                                cursor.execute('SELECT timestamp FROM last_ac_submission_record WHERE id = ?', (submission['id'],))
+                                result = cursor.fetchone()
+                                if not result:
+                                    submission_detail = (
+                                        submission['id'], slug, submission['timestamp'], submission['lang'],
+                                        submission['runtime'], code)
+                                    cursor.execute(
+                                        "INSERT INTO last_ac_submission_record (id, question_slug, timestamp, language, runtime, code) VALUES(?, ?, ?, ?, ?, ?)",
+                                        submission_detail)
+                                    print("insert submission[%s] success" % (submission['id']))
+                                    self.conn.commit()
                             IS_SUCCESS = True
                             break
                 except (requests.exceptions.Timeout, requests.exceptions.ConnectionError) as error:
                     print(str(error))
-                finally:
-                    pass
         cursor.close()
 
     def generate_question_markdown(self, question, path, has_get_code):
-        text_path = os.path.join(path, "{}-{}".format(question['frontedId'], question['slug']))
+        title = question['title'].strip().replace(' ','-').replace('\'','').replace('?','').replace('/','-').replace(':','-')
+        text_path = os.path.join(path, "{}-{}".format(question['frontedId'], title))
         if not os.path.isdir(text_path):
             os.mkdir(text_path)
         with open(os.path.join(text_path, "README.md"), 'w', encoding='utf-8') as f:
@@ -377,6 +464,7 @@ class LeetcodeCrawler():
                 if submission != None:
                     f.write("\n``` %s\n" % (submission[1]))
                     f.write(submission[0].encode('utf-8').decode('unicode_escape'))
+
                     f.write("\n```\n")
 
             f.write("\n[title]: https://leetcode-cn.com/problems/{}\n".format(question['slug']))
@@ -386,7 +474,7 @@ class LeetcodeCrawler():
             return
 
         sql = """
-            SELECT l.question_slug, l.code,l.language, q.frontend_id,max(l.timestamp) FROM last_ac_submission_record as l,question as q 
+            SELECT q.title, l.code,l.language, q.frontend_id, l.question_slug,max(l.timestamp) FROM last_ac_submission_record as l,question as q
             WHERE l.question_slug == q.slug and q.status = 'ac' GROUP BY l.question_slug
         """
         cursor = self.conn.cursor()
@@ -394,7 +482,7 @@ class LeetcodeCrawler():
 
         filter_cursor = self.conn.cursor()
         for submission in cursor:
-            filter_cursor.execute("SELECT id,slug,difficulty,status FROM question WHERE slug = ?", (submission[0],))
+            filter_cursor.execute("SELECT id,slug,difficulty,status FROM question WHERE slug = ?", (submission[4],))
             result = filter_cursor.fetchone()
             question_detail = {
                 'id': result[0],
@@ -412,12 +500,12 @@ class LeetcodeCrawler():
     def generate_question_submission(self, path, submission):
         if not os.path.isdir(path):
             os.mkdir(path)
-
-        text_path = os.path.join(path, "{:0>3d}-{}".format(submission[3], submission[0]))
+        title = submission[0].strip().replace(' ','-').replace('\'','').replace('?','').replace('/','-').replace(':','-')
+        text_path = os.path.join(path, "{}-{}".format(submission[3], title))
 
         if not os.path.isdir(text_path):
             os.mkdir(text_path)
-        with open(os.path.join(text_path, "solution.class"), 'w', encoding='utf-8') as f:
+        with open(os.path.join(text_path, "solution.py"), 'w', encoding='utf-8') as f:
             f.write(submission[1].encode('utf-8').decode('unicode_escape'))
 
     def close_db(self):
@@ -476,6 +564,7 @@ if __name__ == '__main__':
             sys.exit()
         else:
             is_login = test.login(args.username[0], args.password[0])
+            print("INFO: login account success!")
             if not is_login:
                 print("ERROR: login account fail!")
                 sys.exit()
@@ -500,9 +589,9 @@ if __name__ == '__main__':
 
     test.connect_db(DB_PATH)
     test.get_problems(filters)
+    test.generate_questions_markdown(args.problems, filters)
     if args_dict.get('code'):
         test.get_ac_question_submission(filters)
         test.generate_questions_submission(args.problems, filters)
-    test.generate_questions_markdown(args.problems, filters)
 
     test.close_db()

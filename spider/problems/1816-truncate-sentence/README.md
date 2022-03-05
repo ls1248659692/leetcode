@@ -33,4 +33,10 @@
 
 ## 思路
 
+``` python3
+class Solution:
+    def truncateSentence(self, s: str, k: int) -> str:
+        return ' '.join([wd for wd in s.split()][:k])
+```
+
 [title]: https://leetcode-cn.com/problems/truncate-sentence

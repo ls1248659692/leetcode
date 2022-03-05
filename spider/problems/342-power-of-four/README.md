@@ -34,4 +34,12 @@
 
 ## 思路
 
+``` python3
+class Solution:
+    def isPowerOfFour(self, n: int) -> bool:
+        cli=[1]
+        while cli[-1]<=2**31-1:cli.append(cli[-1]*4)
+        return n in cli
+```
+
 [title]: https://leetcode-cn.com/problems/power-of-four

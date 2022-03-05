@@ -33,4 +33,10 @@
 
 ## 思路
 
+``` python3
+class Solution:
+    def mostWordsFound(self, sentences: List[str]) -> int:
+         return max(len([el for el in st.strip().split(' ') if el]) for st in sentences)
+```
+
 [title]: https://leetcode-cn.com/problems/maximum-number-of-words-found-in-sentences

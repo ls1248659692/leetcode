@@ -31,4 +31,10 @@
 
 ## 思路
 
+``` python3
+class Solution:
+    def uniqueOccurrences(self, arr: List[int]) -> bool:
+        return len(set([arr.count(n) for n in set(arr)])) == len(set(arr))
+```
+
 [title]: https://leetcode-cn.com/problems/unique-number-of-occurrences

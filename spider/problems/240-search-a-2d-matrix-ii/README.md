@@ -40,4 +40,14 @@ upload/uploads/2020/11/25/searchgrid.jpg)
 
 ## 思路
 
+``` python3
+class Solution:
+    def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
+        for y in matrix:
+            for x in y:
+                if x == target:
+                    return True
+        return False
+```
+
 [title]: https://leetcode-cn.com/problems/search-a-2d-matrix-ii

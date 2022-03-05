@@ -28,4 +28,27 @@
 
 ## 思路
 
+``` python3
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def partition(self, head: ListNode, x: int) -> ListNode:
+        def lkl2ls(lkn):
+            tli =[]
+            while lkn:
+                tli.append(lkn)
+                lkn= lkn.next
+            return tli
+        tls = lkl2ls(head)   
+        tls = [e for e in tls if e.val < x] +[e for e in tls if e.val >= x]    
+        if not tls :return None
+        tls[-1].next=None
+        for i in range(len(tls)-1):
+            tls[i].next=tls[i+1]
+        return tls[0]        
+```
+
 [title]: https://leetcode-cn.com/problems/partition-list

@@ -38,4 +38,10 @@ A.length]` ，其中 `%` 为取余运算。
 
 ## 思路
 
+``` python3
+class Solution:
+    def check(self, nums: List[int]) -> bool:
+        return '-'.join([str(i) for i in sorted(nums)]) in '-'.join([str(i) for i in nums + nums])
+```
+
 [title]: https://leetcode-cn.com/problems/check-if-array-is-sorted-and-rotated

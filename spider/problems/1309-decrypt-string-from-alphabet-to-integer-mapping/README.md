@@ -40,4 +40,10 @@
 
 ## 思路
 
+``` python3
+class Solution:
+    def freqAlphabets(self, s: str) -> str:
+        return ''.join([''.join([chr(ord('a')+int(d)-1) for d in el[:-2]])+chr(ord('j')+int(el[-2:])-10) for el in s.split('#')[:-1]]) + ''.join([chr(ord('a')+int(d)-1) for d in s.split('#')[-1]])
+```
+
 [title]: https://leetcode-cn.com/problems/decrypt-string-from-alphabet-to-integer-mapping

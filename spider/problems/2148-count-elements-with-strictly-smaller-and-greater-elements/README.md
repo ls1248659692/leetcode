@@ -26,4 +26,11 @@
 
 ## 思路
 
+``` python3
+class Solution:
+    def countElements(self, nums: List[int]) -> int:
+        mx,mi = max(nums),min(nums)
+        return len([e for e in nums if e!=mx and e!=mi])
+```
+
 [title]: https://leetcode-cn.com/problems/count-elements-with-strictly-smaller-and-greater-elements

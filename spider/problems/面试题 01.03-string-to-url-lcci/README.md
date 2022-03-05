@@ -21,4 +21,11 @@ URL化。编写一种方法，将字符串中的空格全部替换为`%20`。假
 
 ## 思路
 
+``` python3
+class Solution:
+    def replaceSpaces(self, S: str, length: int) -> str:
+        nl = S.count(' ')*2+length
+        return S[:length].replace(' ','%20')[:nl] if S.strip() else S[:length].replace(' ','%20')
+```
+
 [title]: https://leetcode-cn.com/problems/string-to-url-lcci

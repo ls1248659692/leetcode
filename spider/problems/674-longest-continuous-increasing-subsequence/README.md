@@ -26,4 +26,20 @@ nums[i + 1]` ，那么子序列 `[nums[l], nums[l + 1], ..., nums[r - 1], nums[r
 
 ## 思路
 
+``` python3
+class Solution:
+    def findLengthOfLCIS(self, nums: List[int]) -> int:
+        def abvsplit(s):
+            r = [[s[0]]]
+            for c in s[1:]:
+                if c > r[-1][-1]:
+                    r[-1].append(c)
+                else:
+                    r.append([c])
+            return r        
+        r =  abvsplit(nums)
+        print(r)
+        return max(len(sub) for sub in r)
+```
+
 [title]: https://leetcode-cn.com/problems/longest-continuous-increasing-subsequence

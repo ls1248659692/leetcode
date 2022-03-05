@@ -29,4 +29,10 @@
 
 ## 思路
 
+``` python3
+class Solution:
+    def minPartitions(self, n: str) -> int:
+        return max([int(ch) for ch in n])
+```
+
 [title]: https://leetcode-cn.com/problems/partitioning-into-minimum-number-of-deci-binary-numbers

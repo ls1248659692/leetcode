@@ -30,4 +30,10 @@
 
 ## 思路
 
+``` python3
+class Solution:
+    def generateTheString(self, n: int) -> str:
+        return 'a' if n==1 else 'a'+'b'*(n-1) if n%2==0 else 'ab'+'c'*(n-2)
+```
+
 [title]: https://leetcode-cn.com/problems/generate-a-string-with-characters-that-have-odd-counts

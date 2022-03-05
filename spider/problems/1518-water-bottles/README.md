@@ -42,4 +42,17 @@ upload/uploads/2020/07/19/sample_2_1875.png)
 
 ## 思路
 
+``` python3
+class Solution:
+    def numWaterBottles(self, numBottles: int, numExchange: int) -> int:
+        get = 0
+        x = numBottles
+        while x >= numExchange:
+            get = x//numExchange
+            reminder = x%numExchange
+            numBottles = get + numBottles
+            x = get + reminder
+        return numBottles
+```
+
 [title]: https://leetcode-cn.com/problems/water-bottles

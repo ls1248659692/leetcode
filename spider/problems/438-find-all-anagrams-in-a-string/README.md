@@ -29,4 +29,12 @@
 
 ## 思路
 
+``` python3
+class Solution:
+    def findAnagrams(self, s: str, p: str) -> List[int]:
+        if len(s)<len(p):return []
+        sp = ''.join(sorted(list(p)))
+        return [i for i in range(len(s)-len(p)+1) if ''.join(sorted(list(s[i:i+len(p)]))) == sp]
+```
+
 [title]: https://leetcode-cn.com/problems/find-all-anagrams-in-a-string

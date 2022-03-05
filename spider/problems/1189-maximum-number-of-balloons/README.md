@@ -37,4 +37,10 @@ upload/uploads/2019/09/14/1536_ex2_upd.jpeg)**
 
 ## 思路
 
+``` python3
+class Solution:
+    def maxNumberOfBalloons(self, text: str) -> int:
+        return(min([text.count('b'),text.count('a'),text.count('l')//2,text.count('o')//2,text.count('n')]))
+```
+
 [title]: https://leetcode-cn.com/problems/maximum-number-of-balloons

@@ -25,4 +25,14 @@
 
 ## 思路
 
+``` python3
+class Solution:
+    def sumBase(self, n: int, k: int) -> int:
+        res = 0
+        while n:
+            res += n % k
+            n //= k
+        return res
+```
+
 [title]: https://leetcode-cn.com/problems/sum-of-digits-in-base-k

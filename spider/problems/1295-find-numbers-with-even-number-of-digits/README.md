@@ -26,4 +26,10 @@
 
 ## 思路
 
+``` python3
+class Solution:
+    def findNumbers(self, nums: List[int]) -> int:
+        return sum(1 for n in nums if len(str(n))%2==0)
+```
+
 [title]: https://leetcode-cn.com/problems/find-numbers-with-even-number-of-digits

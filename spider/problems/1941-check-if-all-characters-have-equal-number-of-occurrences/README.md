@@ -24,4 +24,10 @@
 
 ## 思路
 
+``` python3
+class Solution:
+    def areOccurrencesEqual(self, s: str) -> bool:
+        return len(set([s.count(ch) for ch in set(list(s))]))==1
+```
+
 [title]: https://leetcode-cn.com/problems/check-if-all-characters-have-equal-number-of-occurrences

@@ -40,4 +40,16 @@ index-in-array/>
 
 ## 思路
 
+``` python3
+class Solution:
+    def pivotIndex(self, nums: List[int]) -> int:
+        su =sum(nums)
+        c=0
+        for i in range(len(nums)):
+            if c==(su-nums[i])/2:return i
+            c+=nums[i]
+            
+        return -1    
+```
+
 [title]: https://leetcode-cn.com/problems/find-pivot-index

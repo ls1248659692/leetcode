@@ -26,4 +26,10 @@
 
 ## 思路
 
+``` python3
+class Solution:
+    def sortArray(self, nums: List[int]) -> List[int]:
+        return sorted(nums)
+```
+
 [title]: https://leetcode-cn.com/problems/sort-an-array

@@ -30,4 +30,14 @@ __`'b'` __ 之前，返回 `true` ；否则，返回 `false` 。
 
 ## 思路
 
+``` python
+class Solution(object):
+    def checkString(self, s):
+        """
+        :type s: str
+        :rtype: bool
+        """
+        return False if 'ba' in s else True 
+```
+
 [title]: https://leetcode-cn.com/problems/check-if-all-as-appears-before-all-bs

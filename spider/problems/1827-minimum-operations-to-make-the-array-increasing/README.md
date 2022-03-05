@@ -32,4 +32,18 @@ nums[i+1]` 。一个长度为 `1` 的数组是严格递增的一种特殊情况�
 
 ## 思路
 
+``` python3
+class Solution:
+    def minOperations(self, nums: List[int]) -> int:
+        if len(nums) <= 1:
+            return 0
+        i, cnt = 0, 0
+        while i < len(nums)-1:
+            if nums[i] >= nums[i+1]:
+                cnt += nums[i] - nums[i+1] +1
+                nums[i+1] += nums[i] - nums[i+1] +1
+            i += 1
+        return cnt
+```
+
 [title]: https://leetcode-cn.com/problems/minimum-operations-to-make-the-array-increasing

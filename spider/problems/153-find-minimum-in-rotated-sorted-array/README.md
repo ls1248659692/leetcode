@@ -44,4 +44,10 @@ a[2], ..., a[n-2]]` 。
 
 ## 思路
 
+``` python3
+class Solution:
+    def findMin(self, nums: List[int]) -> int:
+        return min(nums)
+```
+
 [title]: https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array

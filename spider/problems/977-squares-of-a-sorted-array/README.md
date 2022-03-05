@@ -27,4 +27,11 @@
 
 ## 思路
 
+``` python3
+class Solution:
+    def sortedSquares(self, nums: List[int]) -> List[int]:
+        return sorted([i*i for i in nums])
+
+```
+
 [title]: https://leetcode-cn.com/problems/squares-of-a-sorted-array

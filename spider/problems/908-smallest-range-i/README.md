@@ -37,4 +37,10 @@ _在对nums中的每个索引最多应用一次上述操作后，返回  `nums` 
 
 ## 思路
 
+``` python3
+class Solution:
+    def smallestRangeI(self, nums: List[int], k: int) -> int:
+        return max(0,max(nums)-2*abs(k)-min(nums))
+```
+
 [title]: https://leetcode-cn.com/problems/smallest-range-i

@@ -46,4 +46,11 @@
 
 ## 思路
 
+``` python3
+class Solution:
+    def reverseWords(self, s: str) -> str:
+        tli = [el for el in s.strip().split() if el]
+        return ' '.join([tli[ii] for ii in range(len(tli)-1,-1,-1)])
+```
+
 [title]: https://leetcode-cn.com/problems/reverse-words-in-a-string

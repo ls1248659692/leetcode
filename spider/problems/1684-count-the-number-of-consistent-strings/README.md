@@ -31,4 +31,10 @@
 
 ## 思路
 
+``` python3
+class Solution:
+    def countConsistentStrings(self, allowed: str, words: List[str]) -> int:
+        return sum(set(wd).issubset(set(allowed))  for wd in words )
+```
+
 [title]: https://leetcode-cn.com/problems/count-the-number-of-consistent-strings

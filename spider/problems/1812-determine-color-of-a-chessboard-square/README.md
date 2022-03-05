@@ -33,4 +33,10 @@ upload/uploads/2021/04/03/chessboard.png)
 
 ## 思路
 
+``` python3
+class Solution:
+    def squareIsWhite(self, coordinates: str) -> bool:
+        return (ord(coordinates[0])-ord('a') + int(coordinates[1])-1)%2==1
+```
+
 [title]: https://leetcode-cn.com/problems/determine-color-of-a-chessboard-square

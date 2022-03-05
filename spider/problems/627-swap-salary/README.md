@@ -26,4 +26,9 @@
 
 ## 思路
 
+``` mysql
+# Write your MySQL query statement below
+update Salary set sex = if(sex = 'm','f','m')
+```
+
 [title]: https://leetcode-cn.com/problems/swap-salary

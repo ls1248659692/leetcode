@@ -26,4 +26,10 @@
 
 ## 思路
 
+``` python3
+class Solution:
+    def checkIfPangram(self, sentence: str) -> bool:
+        return set(sentence)==set(list('abcdefghijklmnopqrstuvwxyz'))
+```
+
 [title]: https://leetcode-cn.com/problems/check-if-the-sentence-is-pangram

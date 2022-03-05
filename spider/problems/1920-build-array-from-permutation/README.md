@@ -27,4 +27,11 @@
 
 ## 思路
 
+``` python3
+class Solution:
+    def buildArray(self, nums: List[int]) -> List[int]:
+        return [nums[nums[i]] for i in range(len(nums))]
+
+```
+
 [title]: https://leetcode-cn.com/problems/build-array-from-permutation

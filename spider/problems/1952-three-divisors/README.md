@@ -27,4 +27,10 @@
 
 ## 思路
 
+``` python3
+class Solution:
+    def isThree(self, n: int) -> bool:
+        return math.sqrt(n) % 1 == 0 and [n % (1 + ii) for ii in range(int(math.sqrt(n)))].count(0) == 2        
+```
+
 [title]: https://leetcode-cn.com/problems/three-divisors

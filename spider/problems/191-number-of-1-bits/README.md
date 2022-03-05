@@ -34,4 +34,10 @@
 
 ## 思路
 
+``` python3
+class Solution:
+    def hammingWeight(self, n: int) -> int:
+        return str(bin(n)).count('1')
+```
+
 [title]: https://leetcode-cn.com/problems/number-of-1-bits

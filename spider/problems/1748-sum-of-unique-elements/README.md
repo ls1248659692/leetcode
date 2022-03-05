@@ -27,4 +27,10 @@
 
 ## 思路
 
+``` python3
+class Solution:
+    def sumOfUnique(self, nums: List[int]) -> int:
+        return  sum([i for i  in nums if nums.count(i) == 1])
+```
+
 [title]: https://leetcode-cn.com/problems/sum-of-unique-elements

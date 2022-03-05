@@ -28,4 +28,18 @@
 
 ## 思路
 
+``` python3
+class Solution:
+    def numberOfSteps(self, num: int) -> int:
+        cnt = 0
+        while num > 0:
+            if num % 2 ==1 :
+                num -= 1
+                cnt += 1
+            else:
+                num = num // 2
+                cnt += 1
+        return cnt
+```
+
 [title]: https://leetcode-cn.com/problems/number-of-steps-to-reduce-a-number-to-zero

@@ -41,4 +41,12 @@ LeetCode 设计了一款新式键盘，正在测试其可用性。测试人员�
 
 ## 思路
 
+``` python3
+class Solution:
+    def slowestKey(self, releaseTimes: List[int], keysPressed: str) -> str:
+        tli = [releaseTimes[i] -(0 if i==0 else releaseTimes[i-1]) for i in range(len(releaseTimes))]
+        #tmax = 
+        return  sorted([keysPressed[i] for i in range(len(tli)) if tli[i]==max(tli)])[-1]
+```
+
 [title]: https://leetcode-cn.com/problems/slowest-key

@@ -35,4 +35,12 @@
 
 ## 思路
 
+``` python3
+class Solution:
+    def smallestEqual(self, nums: List[int]) -> int:
+        for i in range(len(nums)):
+            if i %10==nums[i]:return i
+        return -1
+```
+
 [title]: https://leetcode-cn.com/problems/smallest-index-with-equal-value

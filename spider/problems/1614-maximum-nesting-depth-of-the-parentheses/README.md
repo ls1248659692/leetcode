@@ -46,4 +46,10 @@
 
 ## 思路
 
+``` python3
+class Solution:
+    def maxDepth(self, s: str) -> int:
+        return max(s[:i].count('(')-s[:i].count(')') for i in range (len(s)))
+```
+
 [title]: https://leetcode-cn.com/problems/maximum-nesting-depth-of-the-parentheses

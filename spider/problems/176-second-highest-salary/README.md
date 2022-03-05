@@ -26,4 +26,9 @@
 
 ## 思路
 
+``` mysql
+# Write your MySQL query statement below
+select (select distinct salary from Employee order by salary desc limit 1,1) as SecondHighestSalary
+```
+
 [title]: https://leetcode-cn.com/problems/second-highest-salary

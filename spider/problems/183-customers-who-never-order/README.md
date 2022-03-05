@@ -20,4 +20,9 @@
 
 ## 思路
 
+``` mysql
+# Write your MySQL query statement below
+select Name as Customers from Customers where id not in (select customerid from orders)
+```
+
 [title]: https://leetcode-cn.com/problems/customers-who-never-order

@@ -29,4 +29,10 @@
 
 ## 思路
 
+``` python3
+class Solution:
+    def arrayStringsAreEqual(self, word1: List[str], word2: List[str]) -> bool:
+        return ''.join(word1)==''.join(word2)
+```
+
 [title]: https://leetcode-cn.com/problems/check-if-two-string-arrays-are-equivalent

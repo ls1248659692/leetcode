@@ -25,4 +25,10 @@
 
 ## 思路
 
+``` python3
+class Solution:
+    def toHex(self, num: int) -> str:
+        return hex(num)[2:] if num>=0 else hex(2**32+num)[2:]
+```
+
 [title]: https://leetcode-cn.com/problems/convert-a-number-to-hexadecimal

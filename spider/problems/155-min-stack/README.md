@@ -32,4 +32,34 @@
 
 ## 思路
 
+``` python3
+class MinStack:
+
+    def __init__(self):
+        self.li=[]
+
+    def push(self, val: int) -> None:
+        self.li.append(val)
+
+
+    def pop(self) -> None:
+        self.li.pop()
+
+    def top(self) -> int:
+        return self.li[-1]
+
+
+    def getMin(self) -> int:
+        return min(self.li) if self.li else None
+
+
+
+# Your MinStack object will be instantiated and called as such:
+# obj = MinStack()
+# obj.push(val)
+# obj.pop()
+# param_3 = obj.top()
+# param_4 = obj.getMin()
+```
+
 [title]: https://leetcode-cn.com/problems/min-stack

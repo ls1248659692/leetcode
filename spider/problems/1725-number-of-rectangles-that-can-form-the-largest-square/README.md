@@ -32,4 +32,10 @@
 
 ## 思路
 
+``` python3
+class Solution:
+    def countGoodRectangles(self, rectangles: List[List[int]]) -> int:
+        return [min(i) for i in rectangles].count(max([min(i) for i in rectangles]))
+```
+
 [title]: https://leetcode-cn.com/problems/number-of-rectangles-that-can-form-the-largest-square

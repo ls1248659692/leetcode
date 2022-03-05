@@ -29,4 +29,11 @@
 
 ## 思路
 
+``` python3
+class Solution:
+    def reverseWords(self, s: str) -> str:
+        return ' '.join([wd[::-1] for wd in s.split()])
+        
+```
+
 [title]: https://leetcode-cn.com/problems/reverse-words-in-a-string-iii

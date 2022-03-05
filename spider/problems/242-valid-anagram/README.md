@@ -26,4 +26,10 @@
 
 ## 思路
 
+``` python3
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        return sorted(list(s))==sorted(list(t))
+```
+
 [title]: https://leetcode-cn.com/problems/valid-anagram

@@ -34,4 +34,10 @@ _只有在爱丽丝在游戏中取得胜利时才返回  `true` 。假设两个�
 
 ## 思路
 
+``` python3
+class Solution:
+    def divisorGame(self, n: int) -> bool:  # s8
+        return True if n % 2 == 0 else False
+```
+
 [title]: https://leetcode-cn.com/problems/divisor-game

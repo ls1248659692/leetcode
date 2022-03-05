@@ -22,4 +22,10 @@
 
 ## 思路
 
+``` python3
+class Solution:
+    def CheckPermutation(self, s1: str, s2: str) -> bool:
+        return sorted(list(s1))==sorted(list(s2))
+```
+
 [title]: https://leetcode-cn.com/problems/check-permutation-lcci

@@ -31,4 +31,10 @@
 
 ## 思路
 
+``` python3
+class Solution:
+    def sortSentence(self, s: str) -> str:
+        return ' '.join ([wd[:-1] for wd in sorted(s.split(),key=lambda xx:xx[-1])])
+```
+
 [title]: https://leetcode-cn.com/problems/sorting-the-sentence

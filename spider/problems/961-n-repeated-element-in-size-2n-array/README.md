@@ -37,4 +37,13 @@
 
 ## 思路
 
+``` python3
+class Solution:
+    def repeatedNTimes(self, nums: List[int]) -> int:
+        n = len(nums)//2
+        for i in nums:
+            if nums.count(i) == n:
+                return i
+```
+
 [title]: https://leetcode-cn.com/problems/n-repeated-element-in-size-2n-array

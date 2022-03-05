@@ -31,4 +31,10 @@
 
 ## 思路
 
+``` python3
+class Solution:
+    def getConcatenation(self, nums: List[int]) -> List[int]:
+        return nums+nums
+```
+
 [title]: https://leetcode-cn.com/problems/concatenation-of-array

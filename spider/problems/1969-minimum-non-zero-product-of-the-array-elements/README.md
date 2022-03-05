@@ -39,4 +39,15 @@ _ **1**_ 1` 和 `y = 00 _ **0**_ 1` 。
 
 ## 思路
 
+``` python3
+
+class Solution:
+    def minNonZeroProduct(self, p: int) -> int:
+        num = 2**p - 1
+        mod = 10**9+7
+        pairs =pow( (num-1),(2**(p-1)-1),(mod))
+        return num* pairs % (mod)
+
+```
+
 [title]: https://leetcode-cn.com/problems/minimum-non-zero-product-of-the-array-elements
