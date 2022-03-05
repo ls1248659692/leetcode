@@ -280,12 +280,116 @@ def start_end_sliding_window(self, seq):
 >JZ56 删除链表中重复的结点
 >* 剑指 Offer 22. 链表中倒数第k个节点
 >* 剑指 Offer 52. 两个链表的第一个公共节点
+```python3
+# a Linked list is a linear collection of data elements, whose order is not given by their physical placement in memory.
+# Instead, each element points to the next.
+#
+# when operation with linked list, we can choose to change list node or change node value.
+# change node value is more easy-understanding, and may need extra space to store.
+#
+# Time:  O(1) to insert and delete, O(n) to random access
+# Space: O(n)
+
+
+# Definition for singly-linked list.
+class ListNode:
+    def __init__(self, x):
+        self.val = x
+        self.next = None
+
+
+# add dummy node to help flag the head, usually used in head may changed or merging None edge case.
+def dummy_node_assist(self, head):
+    dummy = ListNode(0)
+    cur = dummy.next = head  # or cur = dummy
+
+    while cur:
+        '''
+        process current node logic 
+        '''
+        self.process_logic(cur)
+
+    return dummy.next
+
+
+# another solution is use self.next, more pythonic
+def self_assist(self, head):
+    pre, pre.next = self, head
+
+    while pre.next:
+        '''
+        process current node logic 
+        '''
+        self.process_logic(pre.next)
+
+    return self.next
+
+
+# add node
+def add_node(pre_node, new_node):
+    pre_node.next, new_node = new_node, pre_node.next
+
+
+# delete node
+def delete_node(pre_node):
+    pre_node.next = pre_node.next.next
+
+
+# reverse linked list iteratively
+def reverse_iteratively(head: ListNode) -> ListNode:
+    prev, cur = None, head
+    while cur:
+        cur.next, cur, prev = prev, cur.next, cur
+    return prev
+
+
+# reverse linked list recursively
+def reverse_recursively(head: ListNode) -> ListNode:
+    def recursive(cur, pre=None):
+        if not cur:
+            return pre
+        pre, cur.next = cur.next, pre
+        return recursive(pre, cur)
+
+    return recursive(head)
+
+```
 
 ### `4. 原地链表翻转`
 >234. Palindrome Linked List
 >206. Reverse Linked List
 >25. Reverse Nodes in k-Group
 >92. Reverse Linked List II
+
+```python3
+# a Linked list is a linear collection of data elements, whose order is not given by their physical placement in memory.
+# Instead, each element points to the next.
+#
+# when operation with linked list, we can choose to change list node or change node value.
+# change node value is more easy-understanding, and may need extra space to store.
+#
+# Time:  O(1) to insert and delete, O(n) to random access
+# Space: O(n)
+
+
+# reverse linked list iteratively
+def reverse_iteratively(head: ListNode) -> ListNode:
+    prev, cur = None, head
+    while cur:
+        cur.next, cur, prev = prev, cur.next, cur
+    return prev
+
+
+# reverse linked list recursively
+def reverse_recursively(head: ListNode) -> ListNode:
+    def recursive(cur, pre=None):
+        if not cur:
+            return pre
+        pre, cur.next = cur.next, pre
+        return recursive(pre, cur)
+
+    return recursive(head)
+```
 
 ### `5. 区间合并`
 >区间合并的问题，通常是重新把区间按照start和end排序，重新组合区间。
@@ -294,12 +398,20 @@ def start_end_sliding_window(self, seq):
 >986. Interval List Intersections
 >57. Insert Interval
 
+```python3
+todo Merge Intervals algorithm template 
+```
+
 ### `6. 无序限定范围的数组元素查找O(N）`
 >要求 inplace， 通常是采用正负反转的做法
 
 >41. First Missing Positive
 >448. Find All Numbers Disappeared in an Array
 >剑指 Offer 03. 数组中重复的数字
+
+```python3
+todo 无序限定范围的数组元素查找O(N） algorithm template 
+```
 
 ### `7. BFS`
 >BFS 通常采用queue 来实现
@@ -309,6 +421,104 @@ def start_end_sliding_window(self, seq):
 >297. Serialize and Deserialize Binary Tree
 >127. Word Ladder I
 >207. Course Schedule【拓扑排序】
+
+```python3
+# Breadth-first search is traversing or searching tree or graph data structures, including graph-like solution space.
+# it explores all of the neighbor nodes at the present depth prior to moving on to the nodes at the next depth level.
+#
+# Time:  O(V+E)     V: vertex, E: edges
+# Space: O(V)
+from collections import deque
+
+
+# iteration version, using deque
+def bfs_iteratively_by_queue(self, start, target=None):
+    queue, visited = deque([start]), {start}
+
+    while queue:
+        node = queue.popleft()
+        visited.add(node)
+        '''
+        process current node logic here
+        '''
+        self.process_logic(node)
+
+        # target is optional
+        if node == target:
+            '''
+            reach the goal and break out
+            '''
+            self.process_target_logic(target)
+            break
+        for next_node in node.get_successors():
+            if next_node not in visited:
+                queue.append(next_node)
+
+
+# iteration version, using list, pythonic-style
+# conciser but more memory, mainly used when you want to collect the whole list
+def bfs_iteratively_by_list(self, start, target=None):
+    node_list, visited = [start], {start}
+
+    # append while traversing
+    for node in node_list:
+        visited.add(node)
+        '''
+        process current node logic here
+        '''
+        self.process_logic(node)
+
+        # target is optional
+        if node == target:
+            '''
+            reach the goal and break out
+            '''
+            self.process_target_logic(target)
+            break
+        for next_node in node.get_successors():
+            if next_node not in visited:
+                node_list += node
+
+    # basically the node_list is useful here
+    return node_list
+
+
+# recursion version, uncommon
+def bfs_recursively(self, queue: deque, visited: set, target=None):
+    if not queue:
+        return
+
+    node = queue.popleft()
+    visited.add(node)
+    '''
+    process current node logic here
+    '''
+    self.process_logic(node)
+
+    # target is optional
+    if node == target:
+        '''
+        reach the goal and break out
+        '''
+        self.process_target_logic(target)
+        return
+    for next_node in node.get_successors():
+        if next_node not in visited:
+            queue.append(next_node)
+    self.bfs_recursively(queue, visited)
+
+
+# bfs list comprehension in row of binary tree
+def bfs_row(self, root):
+    row = [root]
+    while row:
+        '''
+        process current node logic here
+        '''
+        # process logic separately
+        row = [child for node in row for child in (node.left, node.right) if node]
+
+```
 
 ### `8. 树的DFS`
 >通常采用递归 111. Minimum Depth of Binary Tree
@@ -323,6 +533,47 @@ def start_end_sliding_window(self, seq):
 >* 剑指 Offer 26. 树的子结构
 >* 剑指 Offer 33. 二叉搜索树的后序遍历序列
 >* 剑指 Offer 54. 二叉搜索树的第k大节点(inorder)
+
+```python3
+
+# Deep-first search is traversing or searching tree or graph data structures, including graph-like solution space.
+# it starts at the root node and explores as far as possible along each branch before backtracking.
+#
+# Time:  O(V+E)     V: vertex, E: edges
+# Space: O(V)
+
+
+# recursion version
+def dfs_recursively(self, node, visited: set):
+    visited.add(node)
+    '''
+    process current node logic here
+    '''
+    self.process_logic(node)
+
+    for next_node in node.get_successors():
+        if next_node not in visited:
+            self.dfs_recursively(next_node, visited)
+
+
+# iteration version, uncommon
+def dfs_iteratively(self, root):
+    stack, visited = [root], set()
+    while stack:
+        node = stack.pop()
+        visited.add(node)
+        '''
+        process current node logic here
+        '''
+        self.process_logic(node)
+
+        for next_node in node.get_successors():
+            if next_node not in visited:
+                stack.append(next_node)
+
+```
+
+
 
 ### `9. DFS/递归/回溯法`
 >对于排列和组合的题目，需要主要判断是否会有重复数字，如有重复，需要先进行sort，而且需要进行剪枝。
@@ -345,6 +596,30 @@ def start_end_sliding_window(self, seq):
 >155. Min Stack
 >* 剑指 Offer 09. 用两个栈实现队列
 
+```python3
+# Backtracking is a general algorithm for finding all (or some) solutions to some computational problems, notably
+#  constraint satisfaction problems, that incrementally builds candidates to the solutions, and abandons a candidate
+#  ("backtracks") as soon as it determines that the candidate cannot possibly be completed to a valid solution.
+#
+# backtracking vs. dfs
+# traverse in solution space vs. traverse in data structure space, pruned of dfs
+
+def backtracking(self, data, candidate):
+    # pruning
+    if self.reject(data, candidate):
+        return
+
+    # reach the end
+    if self.accept(data, candidate):
+        return self.output(data, candidate)
+
+    # drill down
+    for cur_candidate in self.all_extension(data, candidate):
+        # or you can choose to prune here, recursion depth - 1
+        if not self.should_to_be_pruned(cur_candidate):
+            self.backtracking(data, cur_candidate)
+```
+
 ### `11. 二分法与二分法变种`
 >当你需要解决的问题的输入是排好序的数组，链表，或是排好序的矩阵，要求咱们寻找某些特定元素。这个时候的不二选择就是二分搜索。
 
@@ -357,6 +632,66 @@ def start_end_sliding_window(self, seq):
 >540. Single Element in a Sorted Array
 >* 剑指 Offer 16. 数值的整数次方(2分法)
 
+```python3
+# binary search requires sorted iterator. Common variation is find left-most or right-most index.
+#
+# Time:  O(log(n))
+# Space: O(1)
+
+
+# [lo, hi] version
+def binary_search(arr, target):
+    lo, hi = 0, len(arr) - 1
+    while lo <= hi:
+        # no overflow problem in python, (lo + hi) // 2 is better.
+        # mid = lo + (hi - lo) // 2
+        mid = (lo + hi) // 2
+        '''
+        change to your comparison condition as you need
+        '''
+        # find the target
+        if arr[mid] == target:
+            break
+        elif arr[mid] < target:
+            lo = mid + 1
+        else:
+            hi = mid - 1
+
+
+# [lo, hi) version
+def binary_search2(arr, target):
+    lo, hi = 0, len(arr)
+    while lo < hi:
+        mid = (lo + hi) // 2
+        # find the target
+        if arr[mid] == target:
+            break
+        elif arr[mid] < target:
+            lo = mid + 1
+        else:
+            hi = mid
+
+
+# result in [0, hi]
+def bisect_left(arr, target, lo, hi):
+    while lo < hi:
+        mid = (lo + hi) // 2
+        # left-most, so equal will be on the right side
+        if arr[mid] < target:
+            lo = mid + 1
+        else:
+            hi = mid
+        '''
+        # bisect right code
+        if arr[mid] > target:
+            hi = mid
+        else:
+            lo = mid + 1
+        '''
+    return lo
+
+```
+
 ### `12. 前K大的数模式HEAP`
 >采用priority queue 或者 说在python 中的heapq 求top k 采用最小堆（默认） 采用最大堆的时候可以采用push 负的value
 
@@ -364,11 +699,75 @@ def start_end_sliding_window(self, seq):
 >347. Top K Frequent Elements
 >373. Find K Pairs with Smallest Sums
 
+```python3
+# heap, also called priority queue
+# heap common operations: heapify, top, heappush, heappop, heappushpop, heapreplace, _siftup/_siftdown,
+# nlargest/nsmallest, merge
+# heapq in Python, there is only min heap, if you want to a max heap, you should reverse the key or implement __lt__.
+#
+# Time:  O(1) to find, O(log(n)) to push/pop/sift, O(nlog(n)) to heapify, O(n) to merge
+# Space: O(n)
+#
+# from Queue import PriorityQueue is alternative way, which is a thread-safe class
+import heapq
+
+
+def heap_operations():
+    heap = [4, 2, 1, 3]
+
+    # heapify
+    heapq.heapify(heap)
+
+    # top
+    top = heap[0]
+
+    # heappop
+    top = heapq.heappop(heap)
+
+    # heappush
+    heapq.heappush(heap, 5)
+
+    # heappushpop = push + pop
+    heapq.heappushpop(heap, 0)
+
+    # heapreplace = pop + push
+    heapq.heapreplace(heap, 0)
+
+    data = [10, 5, 18, 2, 37, 3, 8, 7, 19, 1]
+    heapq.heapify(data)
+    old, new = 8, 22  # increase the 8 to 22
+    i = data.index(old)
+    data[i] = new
+    # _siftup, from root to leaf, when increase
+    heapq._siftup(data, i)
+
+    old, new = 10, 4  # decrease the 10 to 4
+    i = data.index(old)
+    data[i] = new
+    # _siftdown, from leaf to root, when decrease
+    heapq._siftdown(data, 0, i)
+
+    # find n largest by queue
+    heapq.nlargest(data, 3)
+
+    # find n smallest by queue
+    heapq.nsmallest(data, 3)
+
+    # Merge multiple sorted inputs into a single sorted output
+    # e.g. merge timestamped entries from multiple log files
+    heapq.merge([1, 3, 5, 7], [0, 2, 4, 8], [5, 10, 15, 20], [], [25])
+
+```
+
 ### `13. K路归并`
 >K路归并能帮咱们解决那些涉及到多组排好序的数组的问题。
 
 >23. Merge k Sorted Lists
 >21. Merge Two Sorted Lists
+
+```python3
+todo K路归并 algorithm template
+```
 
 ### `14. DP 动态规划`
 >300. Longest Increasing Subsequence
@@ -405,6 +804,43 @@ def start_end_sliding_window(self, seq):
 >* 剑指 Offer 49. 丑数
 >* 剑指 Offer 60. n个骰子的点数
 
+```python3
+# simplifying a complicated problem by breaking it down into simpler sub-problems in a recursive manner
+# dynamic programming = recursion + memorized
+# state definition, state transition equation, optimal substructure
+# direction: bottom-up or top-down
+
+
+def dynamic_programming_template_with_example(word1, word2):
+    m, n = len(word1), len(word2)
+
+    # states definition: cur_min_edit_dist
+    # states compressed to two states: old and new
+    dp = [[0] * (m + 1) for _ in range(2)]
+
+    # initialize the initial edit distance, add one more state for init state
+    for i in range(0, m + 1):
+        dp[0][i] = i
+
+    cur = 1
+    for i in range(n):
+        # initialize the init state
+        dp[cur][0] = i + 1
+        for j in range(m):
+            # state transition equation
+            # if char matched, this is the min dist.
+            if word1[j] == word2[i]:
+                dp[cur][j + 1] = dp[cur ^ 1][j]
+            # otherwise, 1 + minimum of edit/remove/add operations
+            else:
+                dp[cur][j + 1] = 1 + min(dp[cur ^ 1][j], dp[cur ^ 1][j + 1], dp[cur][j])
+        # switch between two states
+        cur ^= 1
+    # return the last state as result
+    return dp[cur ^ 1][-1]
+    
+```
+
 ### `15. 排序算法`
 
 >* Selection Sort
@@ -416,10 +852,700 @@ def start_end_sliding_window(self, seq):
 >* Bubblesort
 >* Linear Sorting
 
+```python3
+# all kinds of sort algorithm, just some common versions to show its idea.
+# here I unify the api as xxx_sort(arr), changed in-place
+#
+# currently include:
+# quick, merge, insert, bubble, selection, heap, shell, bucket, counting, radix, topological
+#
+# constant space vs extra space (merge O(n), counting O(k), bucket O(n+k), radix O(n+k))
+#
+# in place vs out place (merge, counting, bucket, radix)
+#
+# stable vs unstable (selection, quick, heap, shell)
+#
+# comparison based vs non-comparison based (radix, bucket, counting)
+#
+# comparison of counting, bucket and radix sort: all use bucket idea
+# counting sort:  store the single key in bucket
+# bucket sort:    store a range in bucket
+# radix sort:     store each part of element in bucket
+
+# sort      average     best        worst       space   place       stable      comparison
+# bubble    O(n^2)      O(n)        O(n^2)      O(1)    in-place    stable      comparison
+# selection O(n^2)      O(n^2)      O(n^2)      O(1)    in-place    unstable    comparison
+# insert    O(n^2)      O(n)        O(n^2)      O(1)    in-place    stable      comparison
+# shell     O(nlogn)    O(nlogn^2)  O(nlogn^2)  O(1)    in-place    unstable    comparison
+# merge     O(nlogn)    O(nlogn)    O(nlogn)    O(n)    out-place   stable      comparison
+# quick     O(nlogn)    O(nlogn)    O(n^2)      O(logn) in-place    unstable    comparison
+# heap      O(nlogn)    O(nlogn)    O(nlogn)    O(1)    in-place    unstable    comparison
+# counting  O(n+k)      O(n+k)      O(n+k)      O(k)    out-place   stable      non-comparison
+# bucket    O(n+k)      O(n+k)      O(n^2)      O(n+k)  out-place   stable      non-comparison
+# radix     O(nk)       O(nk)       O(nk)       O(n+k)  out-place   stable      non-comparison
+
+import random
+import time
+from collections import deque
+from collections import defaultdict
+
+'''
+quick sort 
+avg: O(nlogn), best: O(nlogn), worst: O(n^2), space: O(logn), in-place, unstable, comparison
+fastest in large-scale and out-of-order data, divide & conquer
+'''
+
+
+def quick_sort(arr):
+    quick_sort_rec(arr, 0, len(arr) - 1)
+
+
+# hi is included, in range [lo, hi]
+def quick_sort_rec(arr, lo, hi):
+    if lo < hi:
+        pivot = partition(arr, lo, hi)
+
+        quick_sort_rec(arr, lo, pivot - 1)
+        quick_sort_rec(arr, pivot + 1, hi)
+
+
+def partition(arr, lo, hi):
+    # choose pivot by median-of-three
+    x, idx = sorted(((arr[lo], lo), (arr[hi], hi), (arr[lo + hi >> 1], lo + hi >> 1)))[1]
+    arr[lo], arr[idx] = arr[idx], arr[lo]
+    while lo < hi:
+        while lo < hi and arr[hi] >= x:
+            hi -= 1
+        arr[lo] = arr[hi]
+        while lo < hi and arr[lo] <= x:
+            lo += 1
+        arr[hi] = arr[lo]
+    arr[lo] = x
+    return lo
+
+
+'''
+merge sort
+avg: O(nlogn), best: O(nlogn), worst: O(nlogn), space: O(n), out-place, stable, comparison
+divide & conquer
+'''
+
+
+# the version with a fixed temp array
+def merge_sort(arr):
+    merge_sort_rec(arr, 0, len(arr) - 1, [0] * len(arr))
+
+
+def merge_sort_rec(arr, first, last, temp):
+    if first < last:
+        mid = (first + last) // 2
+        merge_sort_rec(arr, first, mid, temp)
+        merge_sort_rec(arr, mid + 1, last, temp)
+        merge(arr, first, mid, last, temp)
+
+
+def merge(arr, first, mid, last, temp):
+    i, j = first, mid + 1
+    m, n = mid, last
+    k = 0
+    while i <= m and j <= n:
+        if arr[i] <= arr[j]:
+            temp[k] = arr[i]
+            i += 1
+        else:
+            temp[k] = arr[j]
+            j += 1
+        k += 1
+
+    while i <= m:
+        temp[k] = arr[i]
+        i += 1
+        k += 1
+
+    while j <= n:
+        temp[k] = arr[j]
+        j += 1
+        k += 1
+
+    for i in range(k):
+        arr[first + i] = temp[i]
+
+
+def merge_sort2(arr):
+    res = merge_sort_rec2(arr)
+    for i in range(len(arr)):
+        arr[i] = res[i]
+
+
+def merge_sort_rec2(arr):
+    if len(arr) <= 1:
+        return arr
+    mid = len(arr) // 2
+    left = merge_sort_rec2(arr[:mid])
+    right = merge_sort_rec2(arr[mid:])
+    return merge1(left, right)
+
+
+def merge1(left, right):
+    res = []
+    i = j = 0
+    while i < len(left) and j < len(right):
+        if left[i] <= right[j]:
+            res.append(left[i])
+            i += 1
+        else:
+            res.append(right[j])
+            j += 1
+
+    while i < len(left):
+        res.append(left[i])
+        i += 1
+
+    while j < len(right):
+        res.append(right[j])
+        j += 1
+
+    return res
+
+
+# more pythonic but slower
+def merge2(left, right):
+    res = []
+    while left and right:
+        if left[0] <= right[0]:
+            res.append(left.pop(0))
+        else:
+            res.append(right.pop(0))
+    return res + (left or right)
+
+
+# slowest
+def merge3(left, right):
+    res = []
+    while left and right:
+        if left[-1] > right[-1]:
+            res.insert(0, left.pop())
+        else:
+            res.insert(0, right.pop())
+    return (left or right) + res
+
+
+'''
+insert sort
+avg: O(n^2), best: O(n), worst: O(n^2), space: O(1), in-place, stable, comparison
+fast in small-scale and almost sorted data 
+'''
+
+
+def insert_sort(arr):
+    for i in range(1, len(arr)):
+        x = arr[i]
+        j = i - 1
+        while j >= 0 and arr[j] > x:
+            arr[j + 1] = arr[j]
+            j = j - 1
+        arr[j + 1] = x
+
+
+'''
+bubble sort
+avg: O(n^2), best:O(n), worst: O(n^2), space:O(1), in-place, stable, comparison
+optimization: 
+1. flag whether swap last round, if not, end sort
+2. flag the last swap place, [last_swap, j] has been sorted, just skip it.
+'''
+
+
+# bubble the max to right most
+def bubble_sort(arr):
+    for i in range(len(arr) - 1):
+        for j in range(len(arr) - i - 1):
+            if arr[j] > arr[j + 1]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+
+
+# optimization
+def bubble_sort2(arr):
+    i = len(arr) - 1
+    while i > 0:
+        last_swap = 0
+        for j in range(i):
+            if arr[j] > arr[j + 1]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+                last_swap = j
+        # if last_swap=0, it means no swap in last round, end sort
+        # [last_swap, i] has been sorted, start from last_swap
+        i = last_swap
+
+
+'''
+selection sort
+avg: O(n^2), best: O(n^2), worst: O(n^2), space: O(1), in-place, unstable, comparison
+most stable in time cost, always O(n^2), and easy understanding, used in small scale data
+'''
+
+
+def selection_sort(arr):
+    for i in range(len(arr)):
+        min_i = i
+        for j in range(i+1, len(arr)):
+            if arr[j] < arr[min_i]:
+                min_i = j
+        arr[i], arr[min_i] = arr[min_i], arr[i]
+
+
+'''
+heap sort
+avg: O(nlogn), best: O(nlogn), worst: O(nlogn), space: O(1), in-place, unstable, comparison
+not only a sort algorithm, this structure (priority queue) can do more thing.
+'''
+
+
+def heap_sort(arr):
+    # build max heap
+    for i in range(len(arr) // 2)[::-1]:
+        heap_adjust(arr, i, len(arr))
+
+    # adjust from last element
+    for i in range(1, len(arr))[::-1]:
+        # swap first with the last, make the right most is maximum
+        arr[0], arr[i] = arr[i], arr[0]
+        heap_adjust(arr, 0, i)
+
+
+def heap_adjust(arr, i, n):
+    cur = arr[i]
+    while 2 * i + 1 < n:
+        # get child index in heap
+        child = 2 * i + 1
+
+        # choose the larger child
+        if child < n - 1 and arr[child + 1] > arr[child]:
+            child += 1
+
+        # if child is larger than parent, sift up
+        if cur < arr[child]:
+            arr[i], arr[child] = arr[child], cur
+            i = child
+        else:
+            break
+
+
+'''
+shell sort
+avg: O(nlogn), best: O(nlogn^2), worst: O(nlogn^2), space: O(1), in-place, unstable, comparison
+improvement of insertion sort
+'''
+
+
+def shell_sort(arr):
+    # Shell sort using Shell's (original) gap sequence: n/2, n/4, ..., 1.
+    gap = len(arr) // 2
+    # loop over the gaps
+    while gap > 0:
+        # do the insertion sort
+        for i in range(gap, len(arr)):
+            val = arr[i]
+            j = i
+            while j >= gap and arr[j - gap] > val:
+                arr[j] = arr[j - gap]
+                j -= gap
+            arr[j] = val
+        gap //= 2
+
+
+'''
+counting sort
+avg: O(n+k), best:O(n+k), worst:O(n+k), space:O(k), out-place, stable, non-comparison
+relatively concentrated values
+'''
+
+
+def counting_sort(arr):
+    min_val, max_val = min(arr), max(arr)
+    size = max_val - min_val + 1
+    counter = [0] * size
+
+    for i in range(len(arr)):
+        counter[arr[i] - min_val] += 1
+
+    idx = 0
+    for i, v in enumerate(counter):
+        # use slice assignment
+        arr[idx:idx + v] = [i + min_val] * v
+        idx += v
+
+
+'''
+bucket sort
+avg: O(n+k), best:O(n+k), worst:O(n^2), space:O(n+k), out-place, stable, non-comparison
+improvement of counting sort, usually used with hash 
+'''
+DEFAULT_BUCKET_SIZE = 5
+
+
+def bucket_sort(arr, size=DEFAULT_BUCKET_SIZE):
+    min_val, max_val = min(arr), max(arr)
+
+    # initialize buckets
+    count = (max_val - min_val) // size + 1
+    buckets = [[] for _ in range(count)]
+
+    # put values in buckets
+    for i in range(len(arr)):
+        buckets[(arr[i] - min_val) // size].append(arr[i])
+
+    # sort buckets and place back into input array
+    i = 0
+    for bucket in buckets:
+        insert_sort(bucket)
+        # use slice assignment
+        arr[i:i + len(bucket)] = bucket
+        i += len(bucket)
+
+
+# with hash
+def bucket_sort2(arr):
+    # get hash codes
+    code = hashing(arr)
+    buckets = [[] for _ in range(code[1])]
+    # distribute data into buckets: O(n)
+    for i in arr:
+        x = re_hashing(i, code)
+        buckets[x].append(i)
+
+    i = 0
+    # merge the buckets: O(n)
+    for bucket in buckets:
+        insert_sort(bucket)
+        arr[i:i + len(bucket)] = bucket
+        i += len(bucket)
+
+
+def hashing(arr):
+    return [max(arr), int(len(arr) ** 0.5)]
+
+
+def re_hashing(i, code):
+    return int(i / code[0] * (code[1] - 1))
+
+
+'''
+radix sort
+avg: O(nk), best:O(nk), worst:O(nk), space:O(n+k), out-place, stable, non-comparison
+improvement of counting sort
+'''
+
+
+def radix_sort(arr):
+    radix = 10
+    max_length = False
+    placement = 1
+
+    while not max_length:
+        max_length = True
+        # declare and initialize buckets
+        buckets = [[] for _ in range(radix)]
+
+        # split arr between lists
+        for i in arr:
+            temp = i // placement
+            buckets[temp % radix].append(i)
+            if max_length and temp > 0:
+                max_length = False
+
+        # assign from bucket to arr
+        i = 0
+        for bucket in buckets:
+            insert_sort(bucket)
+            # use slice assignment
+            arr[i:i + len(bucket)] = bucket
+            i += len(bucket)
+
+        # move to next digit
+        placement *= radix
+    return arr
+
+
+'''
+topological sort
+in a directed graph, a linear ordering of its vertices such that for every directed edge uv from vertex u to vertex v, 
+u comes before v in the ordering. 
+'''
+
+GRAY, BLACK = 0, 1
+
+
+def topological_sort(graph):
+    order, enter, state = deque(), set(graph), {}
+
+    def dfs(node):
+        state[node] = GRAY
+        for k in graph.get(node, ()):
+            sk = state.get(k, None)
+            if sk == GRAY:
+                raise ValueError("cycle")
+            if sk == BLACK:
+                continue
+            enter.discard(k)
+            dfs(k)
+        order.appendleft(node)
+        state[node] = BLACK
+
+    while enter:
+        dfs(enter.pop())
+    return order
+
+
+if __name__ == '__main__':
+    def sort_test(sort_func):
+        start = time.time()
+        for _ in range(100):
+            nums = [random.randrange(1, 250) for _ in range(1000)]
+            nums1 = sorted(nums)
+            sort_func(nums)
+            if nums1 != nums:
+                print('incorrect', )
+        end = time.time()
+        print('{:15s} time: {}'.format(sort_func.__name__, end - start))
+
+
+    sort_test(quick_sort)
+    sort_test(merge_sort)
+    sort_test(merge_sort2)
+    sort_test(heap_sort)
+    sort_test(shell_sort)
+    sort_test(counting_sort)
+    sort_test(bucket_sort)
+    sort_test(bucket_sort2)
+    sort_test(radix_sort)
+
+    # put turtle algorithms to the tail
+    sort_test(insert_sort)
+    sort_test(bubble_sort)
+    sort_test(bubble_sort2)
+    sort_test(selection_sort)
+
+    graph = defaultdict(list)
+    graph['A'].append('B')
+    graph['B'].append('D')
+    graph['C'].append('A')
+    print(topological_sort(graph))
+
+```
+
 ### `16. 树和链表结合`
 >36. 二叉搜索树与双向链表
 >109. Convert Sorted List to Binary Search Tree
 >114. Flatten Binary Tree to Linked List
+
+```python3
+# Classification: binary tree, complete binary tree, full binary tree, binary search tree, AVL tree(self-balancing)
+#
+# Time:  O(n)
+# Space: O(h) h: height of tree
+from collections import deque
+
+
+# Definition for a binary tree node
+class TreeNode:
+    def __init__(self, x):
+        self.val = x
+        self.left = None
+        self.right = None
+
+
+'''
+traverse binary tree recursively
+'''
+
+
+# pre-order: root->left->right
+def preorder_traversal_recursively(self, root: 'TreeNode'):
+    # recursion terminator here
+    # you can check if none when add left and right child, it will decrease one recursion depth,
+    # but you have to check whether root is None outside.
+    if not root:
+        return
+    '''
+    add current node logic here
+    '''
+    self.process_logic(root)
+
+    self.preorder_traversal_recursively(root.left)
+    self.preorder_traversal_recursively(root.right)
+
+
+# in-order: left->root->right
+def inorder_traversal_recursively(self, root: 'TreeNode'):
+    if not root:
+        return
+
+    self.inorder_traversal_recursively(root.left)
+    '''
+    add current node logic here
+    '''
+    self.process_logic(root)
+
+    self.inorder_traversal_recursively(root.right)
+
+
+# post-order: left->right->root
+def postorder_traversal_recursively(self, root: 'TreeNode'):
+    if not root:
+        return
+
+    self.postorder_traversal_recursively(root.left)
+    self.postorder_traversal_recursively(root.right)
+    '''
+    add current node logic here
+    '''
+    self.process_logic(root)
+
+
+# level-order
+# to traverse recursively, need help from extra data structure or dfs level by level
+def level_order_traversal_recursively(self, root: 'TreeNode') -> 'List[List[int]]':
+    res = []
+
+    def dfs(root, level):
+        if not root:
+            return
+        if len(res) < level + 1:
+            res.append([])
+        '''
+        add current node logic here
+        '''
+        self.process_logic(root)
+
+        res[level].append(root.val)
+        dfs(root.left, level + 1)
+        dfs(root.right, level + 1)
+
+    dfs(root, 0)
+    return res
+
+
+'''
+traverse binary tree iteratively
+'''
+
+
+# There are too many version to traverse iteratively, just choose the one you like it.
+# pre-order: root->left->right
+def preorder_traversal_iteratively(self, root: 'TreeNode'):
+    if not root:
+        return []
+    stack = [root]
+    while stack:
+        root = stack.pop()
+        '''
+        add current node logic here
+        '''
+        self.process_logic(root)
+
+        # push right child first because of FILO
+        if root.right:
+            stack.append(root.right)
+        if root.left:
+            stack.append(root.left)
+
+
+# in-order: left->root->right
+def inorder_traversal_iteratively(self, root: 'TreeNode'):
+    stack = []
+    # keep stack empty and compare root too, compatible with edge case: root=None
+    while stack or root:
+        # push itself and all left children into stack iteratively
+        while root:
+            stack.append(root)
+            root = root.left
+        root = stack.pop()
+        '''
+        add current node logic here
+        '''
+        self.process_logic(root)
+
+        # point to right child
+        root = root.right
+
+
+# here I choose to not use
+# post-order: left->right->root
+def postorder_traversal_iteratively(self, root: 'TreeNode'):
+    if not root:
+        return []
+    stack = [root]
+    # used to record whether left or right child has been visited
+    last = None
+
+    while stack:
+        root = stack[-1]
+        # if current node has no left right child, or left child or right child has been visited, then process and pop it
+        if not root.left and not root.right or last and (root.left == last or root.right == last):
+            '''
+            add current node logic here
+            '''
+            self.process_logic(root)
+
+            stack.pop()
+            last = root
+        # if not, push right and left child in stack
+        else:
+            # push right first because of FILO
+            if root.right:
+                stack.append(root.right)
+            if root.left:
+                stack.append(root.left)
+
+
+# post-order: left->right->root
+# use visit flag
+def postorder_traversal_iteratively2(self, root: 'TreeNode'):
+    if not root:
+        return []
+    stack = [root]
+    while stack:
+        root = stack[-1]
+        # use visited attribute to judge whether it has been visited
+        if hasattr(root, 'visited'):
+            '''
+            add current node logic here
+            '''
+            self.process_logic(root)
+
+            stack.pop()
+            del root.visited
+        else:
+            if root.right:
+                stack.append(root.right)
+            if root.left:
+                stack.append(root.left)
+            root.visited = True
+
+
+# level-order
+def level_order_traversal_iteratively(self, root: 'TreeNode'):
+    if not root:
+        return []
+    queue = deque([root])
+    while queue:
+        for _ in range(len(queue)):
+            cur = queue.popleft()
+            '''
+            add current node logic here
+            '''
+            self.process_logic(cur)
+
+            if cur.left:
+                queue.append(cur.left)
+            if cur.right:
+                queue.append(cur.right)
+        '''
+        add level logic here if you need
+        '''
+```
+
 
 ### `17. 树的重新构建`
 >105. Construct Binary Tree from Preorder and Inorder Traversal
@@ -427,6 +1553,10 @@ def start_end_sliding_window(self, seq):
 >606. Construct String from Binary Tree
 >1008. Construct Binary Search Tree from Preorder Traversal
 >889. Construct Binary Tree from Preorder and Postorder Traversal
+
+```python3
+相关算法模板同上树和链表结合
+```
 
 ### `18. 位运算`
 >136. Single Number
@@ -436,32 +1566,267 @@ def start_end_sliding_window(self, seq):
 >* 剑指 Offer 56 - I. 数组中数字出现的次数
 >* 剑指 Offer 56 - II. 数组中数字出现的次数 II
 
+```python3
+# Bit manipulation is the act of algorithmically manipulating bits or other pieces of data shorter than a word.
+#
+# common bit-wise operation
+#
+# operations priority:
+# {}[]() -> ** -> ~ -> -x -> *,/,% -> +,- -> <<,>> -> & -> ^ -> | -> <>!= -> is -> in -> not x -> and -> or
+
+
+def bit_wise_operations(a, b):
+    # not
+    ~a
+
+    # or
+    a | b
+
+    # and
+    a & b
+
+    # xor
+    a ^ b
+
+    # shift operators
+    a << b
+    a >> b
+
+    # subtraction
+    a & ~b
+
+    # set bit, assign to 1
+    a |= 1 << b
+
+    # clear bit, assign to 0
+    a &= ~(1 << b)
+
+    # test bit
+    if a & 1 << b: pass
+
+    # extract last bit
+    a & -a
+
+    # remove last bit
+    a & (a - 1)
+
+    # check is odd or even
+    if a & 1: print('odd')
+
+    # clear right n bit
+    a & (~0 << b)
+
+    # clear left until to n
+    a & ((1 << b) - 1)
+
+# reference
+# https://leetcode.com/problems/sum-of-two-integers/discuss/84278/A-summary%3A-how-to-use-bit-manipulation-to-solve-problems-easily-and-efficiently
+```
+
 ### `19. 字符串`
 >一般都有很多corner cases 需要考虑
- 
 >8. String to Integer (atoi)
-
 >* 剑指 Offer 20. 表示数值的字符串
 >* 剑指 Offer 58 - I. 翻转单词顺序(2次翻转）
 >* 剑指 Offer 58 - II. 左旋转字符串
+
+```python3
+# string is traditionally a sequence of characters, either as a literal constant or as some kind of variable.
+import string
+
+
+def string_operations():
+    s = 'abcab'
+
+    # join
+    ','.join(s)
+
+    # split
+    s.split(',')
+
+    # replace
+    s.replace()
+
+    # index & find, index return -1 if not found
+    s.index('a')
+    s.find('a')
+    s.rfind('a')
+
+    # count
+    s.count('a')
+
+    # start & end with
+    s.startswith('a')
+    s.endswith('b')
+
+    # translate
+    intab = "aeiou"
+    outtab = "12345"
+    trantab = str.maketrans(intab, outtab)
+    s.translate(trantab)
+
+    # strip
+    s.lstrip()
+    s.rstrip()
+    s.strip()
+
+    # just
+    s.ljust(10)
+    s.rjust(10)
+    s.center(10)
+    s.zfill(10)
+
+    # common string
+    string.punctuation
+    string.whitespace
+    string.ascii_lowercase
+    string.hexdigits
+    string.printable
+```
+
 
 ### `20. stack`
 
 >* 剑指 Offer 31. 栈的压入、弹出序列
 
-### `21. math`
-> 172. Factorial Trailing Zeroes
-> 470. Implement Rand10() Using Rand7()
+```python3
+# stack common operation: push, pop, top
+# stack is used in pairs, maintain extreme value
+#
+# FILO: First In, Last Out
+# Time:  O(1)
+# Space: O(n)
 
-### `22. array`
+
+# sequence stack based on list
+def stack_operations():
+    # initialization
+    stack = []
+
+    # size of stack
+    size = len(stack)
+
+    # push
+    stack.append(1)
+
+    # check is empty
+    if stack:
+        # top
+        top = stack[-1]
+
+        # pop
+        stack.pop()
+```
+
+
+### `21. array`
 >* 剑指 Offer 66. 构建乘积数组
+```python3
 
-### `23. 二叉搜索树`
+# list is a collection which is ordered and changeable, with continuous space.
+#
+# Time:  O(1) to index or write or append, O(n) to insert or remove
+# Space: O(n)
+
+
+def list_operations():
+    # initialization
+    list1 = [3, 1, 2, 4]
+
+    list2 = list(range(5))
+    # [*X] equals to list(X)
+    list2 = [*range(5)]
+
+    # append
+    list1.append(5)
+    list1 += [5]
+    list1 += 5,
+    list1.extend([5, 6])
+
+    # insert
+    list1.insert(0)
+
+    # index
+    list1.index(3)
+
+    # count
+    list1.count(3)
+
+    # remove
+    list1.remove(3)
+
+    # sort
+    list1.sort(reverse=True)
+
+    # reverse
+    list1.reverse()
+```
+
+### `22. 二叉搜索树`
 
 >* 剑指 Offer 68 - I. 二叉搜索树的最近公共祖先
 >* 剑指 Offer 68 - II. 二叉树的最近公共祖先
 >* 二叉树的下一个结点
 
+```python3
+
+# binary search requires sorted iterator. Common variation is find left-most or right-most index.
+#
+# Time:  O(log(n))
+# Space: O(1)
+
+
+# [lo, hi] version
+def binary_search(arr, target):
+    lo, hi = 0, len(arr) - 1
+    while lo <= hi:
+        # no overflow problem in python, (lo + hi) // 2 is better.
+        # mid = lo + (hi - lo) // 2
+        mid = (lo + hi) // 2
+        '''
+        change to your comparison condition as you need
+        '''
+        # find the target
+        if arr[mid] == target:
+            break
+        elif arr[mid] < target:
+            lo = mid + 1
+        else:
+            hi = mid - 1
+
+
+# [lo, hi) version
+def binary_search2(arr, target):
+    lo, hi = 0, len(arr)
+    while lo < hi:
+        mid = (lo + hi) // 2
+        # find the target
+        if arr[mid] == target:
+            break
+        elif arr[mid] < target:
+            lo = mid + 1
+        else:
+            hi = mid
+
+
+# result in [0, hi]
+def bisect_left(arr, target, lo, hi):
+    while lo < hi:
+        mid = (lo + hi) // 2
+        # left-most, so equal will be on the right side
+        if arr[mid] < target:
+            lo = mid + 1
+        else:
+            hi = mid
+        '''
+        # bisect right code
+        if arr[mid] > target:
+            hi = mid
+        else:
+            lo = mid + 1
+        '''
+    return lo
+```
 
 ### 算法和数据结构(学习相关书籍推荐)
 
