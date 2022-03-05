@@ -1849,7 +1849,3 @@ def bisect_left(arr, target, lo, hi):
 ### Donate
 
 如果本仓库对你有帮助，可以请作者喝杯速溶咖啡,给大家推荐个Google大佬的算法课程。
-<<<<<<< HEAD
-
-=======
->>>>>>> d480464673e17f358c5df838740a0ecdd8f1f502
