@@ -8,7 +8,7 @@
 
 本仓库的 leetcode 文件夹下都是基于 LeetCode 的题目，涵盖了所有题型和技巧，而且一定要做到**举一反三，通俗易懂**，[算法体系化学习书籍和面试题](https://github.com/ls1248659692/leetcode/tree/master/book)有相关算法系统学习书籍和题目推荐。
 
-## Leetcode [算法题刷题科学刷题总结](https://zhuanlan.zhihu.com/p/96883783)
+## Leetcode 科学刷题总结
 1. 职业训练：拆分知识点、刻意练习、总结
 2. 五步刷题法（五毒神掌）
 3. 做算法的最大误区：只刷一遍
