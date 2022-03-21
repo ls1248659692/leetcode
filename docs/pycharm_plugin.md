@@ -7,7 +7,7 @@
 > 用了这么久，慢慢发现了不少插件，有些插件很好用，就一直保留了下来。其中也尝试了很多其他的插件，有些插件用了之后不好用或者用不到就卸载了，也希望大家有好的插件也介绍给我一下。
 
 
-**.ignore**
+## .ignore
 
 ![image](https://user-images.githubusercontent.com/33345911/159252642-cdbce481-0182-428a-b2a2-1892419fe56a.png)
 
@@ -16,7 +16,7 @@
 2. 安装这个插件之后就可以很方便的创建对应的忽略文件。比如想创建Git的忽略文件，
 3. 只需要在文件夹上右键单击 new -> .ignore file  -> .gitignore file, 就可以了。
 
-**A8Translate**
+## A8Translate
 
 ![image](https://user-images.githubusercontent.com/33345911/159252778-aa86ba23-b2b6-4b80-8f0e-836c79f56c95.png)
 
@@ -24,7 +24,7 @@
 1. 这个是一个翻译插件，能翻译在代码中选中的内容，便于大家理解代码和记忆单词。
 2. 使用方法也很简单，因为我用的是Mac系统，所以，选中单词之后，使用快捷键 Meta + T（这个插件的快捷键可以在Edit中查看），就会自动翻译你选中的内容。
 
-**activate-power-mode**
+## activate-power-mode
 
 ![image](https://upload-images.jianshu.io/upload_images/6285249-849fb6db98561f63.gif)
 
@@ -40,7 +40,7 @@
 2. 这样可以帮你记住很多快捷键。比如你运行Python脚本，它就会在右下角提示用什么快捷键，次数多了就记住了。
 3. 作为以后以程序作为职业的人，记住快捷键是提升工作编码效率的第一步。
 
-**Material Theme UI**
+## Material Theme UI
 
 ![image](https://user-images.githubusercontent.com/33345911/159253205-7f999da7-2bb3-44d6-ae5b-32671369aa82.png)
 
