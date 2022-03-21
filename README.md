@@ -4,7 +4,7 @@
 
 > 个人简介： 化工行业转行计算机全靠自学，目前在国内大厂工作，在力扣上传了数百道问题的解法，本仓库主要是为了总结算法套路与帮助和我一样转行，以及想深入学习算法有大厂梦的兄弟和姐妹们。
 
-> 刷题写代码环境, IDE选用 Pycharm 配置几个必要的插件 [Pycharm 写代码插件](https://github.com/ls1248659692/leetcode/blob/master/docs/pycharm_plugin.md) ，并按照要求配置 [leetcode 刷题插件](https://github.com/shuzijun/leetcode-editor/blob/master/README_ZH.md)
+> 刷题写代码环境, IDE选用 Pycharm 配置几个必要的插件 [Pycharm 写代码插件](https://github.com/ls1248659692/leetcode/blob/master/docs/pycharm_plugin.md) ，并按照要求配置 [leetcode 刷题插件](https://github.com/ls1248659692/leetcode/blob/master/docs/leetcode_plugin.md)
 
 **算法题分类思维导图：**
 ![image](https://user-images.githubusercontent.com/33345911/155837010-d97e1df7-0261-4099-8039-6b31cf567b70.png)
