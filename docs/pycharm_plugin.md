@@ -26,7 +26,7 @@
 
 **activate-power-mode**
 
-![image](https://user-images.githubusercontent.com/33345911/159252890-f5237528-4ffa-446c-a92d-fdd5b654ec08.png)
+![image](https://upload-images.jianshu.io/upload_images/6285249-849fb6db98561f63.gif)
 
 **操作说明**
 1. 这个是根据Atom的插件activate-power-mode的效果移植到IDEA上Power mode II可以出现火花的效果, 写起代码很带劲。
