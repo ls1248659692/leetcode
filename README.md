@@ -12,7 +12,7 @@
 **算法题分类思维导图：**
 ![image](https://user-images.githubusercontent.com/33345911/155837010-d97e1df7-0261-4099-8039-6b31cf567b70.png)
 
-本仓库的 leetcode 文件夹下都是基于 LeetCode 的题目，涵盖了所有题型和技巧，而且一定要做到**举一反三，通俗易懂**，[算法体系化学习书籍和面试题](https://github.com/ls1248659692/leetcode/tree/master/book)有相关算法系统学习书籍和题目推荐。
+本仓库的 leetcode 文件夹下都是基于 LeetCode 的题目，涵盖了所有题型和技巧，而且做到**举一反三，通俗易懂**，[算法体系化学习书籍和面试题](https://github.com/ls1248659692/leetcode/tree/master/book)有相关算法系统学习书籍和题目推荐。
 
 ## Leetcode 科学刷题总结
 1. 职业训练：拆分知识点、刻意练习、总结
