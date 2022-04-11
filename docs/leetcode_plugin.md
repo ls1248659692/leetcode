@@ -5,12 +5,18 @@
 
 
 ### 安装  
-- **通过插件库安装** ![leetcode-editor](https://user-images.githubusercontent.com/33345911/162762222-857a72f1-4635-493e-8b20-cc2ba89dbfb1.png)
+- **通过插件库安装** 
+
+![leetcode-editor](https://user-images.githubusercontent.com/33345911/162762222-857a72f1-4635-493e-8b20-cc2ba89dbfb1.png)
 
 ### 配置(第一次安装需要先配置)  
-- **插件打开leetcode** ![leetcode-editor](https://user-images.githubusercontent.com/33345911/162762446-e3b2d76d-fd05-43e7-9c41-de59ee70f53a.png)
+- **插件打开leetcode** 
+
+![leetcode-editor](https://user-images.githubusercontent.com/33345911/162762446-e3b2d76d-fd05-43e7-9c41-de59ee70f53a.png)
  
-- **配置路径**: `File` -> `settings`->`tools`->`leetcode plugin` ![leetcode-config](https://user-images.githubusercontent.com/33345911/162762858-7ccf082e-39ab-4222-934d-f2a2970ebee9.png)
+- **配置路径**: `File` -> `settings`->`tools`->`leetcode plugin` 
+
+![leetcode-config](https://user-images.githubusercontent.com/33345911/162762858-7ccf082e-39ab-4222-934d-f2a2970ebee9.png)
  
   - **`URL可选项`**: `leetcode.com`与`leetcode-cn.com`  
   - **`Code Type`**: `Java`,`Python`,`C++`,`Python3`,`C`,`C#`,`JavaScript`,`Ruby`,`Swift`,`Go` ,`Scala`,`Kotlin`,`Rust`,`PHP`,`Bash`,`SQL`   
@@ -22,8 +28,9 @@
   - **`LevelColour`**: 自定义题目难度颜色,重启后生效  
   - **`English Content`**: 题目显示英文描述  
   
-### 窗口(主窗口右下角![icon](https://user-images.githubusercontent.com/33345911/162762629-34aa1095-81aa-475e-90d4-597a9e502bec.png)
-  
+### 窗口(主窗口右下角
+
+![icon](https://user-images.githubusercontent.com/33345911/162762629-34aa1095-81aa-475e-90d4-597a9e502bec.png)
   
 - **工具栏**:  
   - **`登录`**:两个网站的登录帐号不互通，切换网站需配置对应的用户  
@@ -34,7 +41,9 @@
   - **`配置`**:快捷跳转到配置界面  
   - **`清理`**:清理配置的缓存目录下的文件，两个网站对应的缓存目录不同，只会清理当前配置的网站下的。部分题目未提交的情况下慎重清理  
 
-- **树**:  ![Problems](https://user-images.githubusercontent.com/33345911/162762982-f8bea8c2-7141-4064-a0dc-1339a14b2065.png)
+- **树**:  
+
+![Problems](https://user-images.githubusercontent.com/33345911/162762982-f8bea8c2-7141-4064-a0dc-1339a14b2065.png)
 
   - **`Problems`**:全部题目  
   - **`Difficulty`**:难度分类  
@@ -45,7 +54,9 @@
   
 ### 菜单   
 
-- **菜单(在题目上右击出现)**:   ![upload-leetcode-code](https://user-images.githubusercontent.com/33345911/162763081-5149c9e4-6158-44b1-8343-b6a5435cbf56.png)
+- **菜单(在题目上右击出现)**:  
+
+![upload-leetcode-code](https://user-images.githubusercontent.com/33345911/162763081-5149c9e4-6158-44b1-8343-b6a5435cbf56.png)
 
   - **`open question`**:打开题目,在题目上双击也可以打开  
   - **`open content`**:查看描述，包含图片(依赖 Markdown)  
@@ -56,6 +67,3 @@
   - **`favorite`**:添加或移除收藏
   - **`Clear cache`**:清理当前题目  
   - **`Timer`**:计时器,开启后在右下角状态栏提示解题时间    
-  
-- **Editor菜单(在Editor上右击出现)**:  
-  功能同上
