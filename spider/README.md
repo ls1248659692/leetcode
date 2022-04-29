@@ -40,8 +40,9 @@ optional arguments:
 | Name  | Full Name  | Type | Description   |
 | ----  | ----       | ---- | ----          |
 | d     | difficulty | str  | 难度：Easy，Medium，Hard |
+| s     | slug       | str  | url_slug  |
 | t     | tags       | str  | 题目标签  |
-| s     | status     | str  | 题目状态， ac： 通过，notac：未通过，none：未尝试 |
+| a     | acstatus     | str  | 题目状态， ac： 通过，notac：未通过，none：未尝试 |
 | c     | code       | str  | 生成AC代码文件存入路径 |
 | u     | username   | str  | Leetcode 账号名       |
 | p     | password   | str  | Leetcode 密码         |
@@ -54,12 +55,12 @@ optional arguments:
 有些会员题需要权限才能爬取题目，每次爬取前需要获取下 LEETCODE_SESSION 避免权限认证失败，生成 README.md 到 problems 目录中
 
 ``` shell
-python3 leetcode_crawler.py problems -v -u username -p password
+python leetcode_crawler.py problems -v -u username -p password
 ```
 
 
 爬取所有 AC 的题目，生成文档到 problems 目录中，生成代码文件到 code 目录中
 
 ``` shell
-python3 leetcode_crawler.py problems -s ac -c code -u username -p password
+python leetcode_crawler.py problems -s ac -c code -u username -p password
 ```
