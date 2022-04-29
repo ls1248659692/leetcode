@@ -10,7 +10,7 @@
 
 > 个人简介： 化工行业转行计算机全靠自学，目前在国内大厂工作，在[力扣上传了数百道问题的解法](https://leetcode-cn.com/u/jam007/)，本仓库主要是为了总结算法套路与帮助和我一样转行，以及想深入学习算法有大厂梦的兄弟和姐妹们。
 
-> 刷题写代码环境, IDE选用 Pycharm 配置几个必要写代码插件 [Pycharm 写代码插件](https://github.com/ls1248659692/leetcode/blob/master/docs/pycharm_plugin.md) ，并配置 [leetcode 刷题插件](https://github.com/ls1248659692/leetcode/blob/master/docs/leetcode_plugin.md) 方便直接拉取 Leetcode-cn 算法题，直接在IDE 里面写代码和套用算法模板，提高刷题效率。
+> 刷题写代码环境, IDE选用 Pycharm 配置几个必要写代码插件 [Pycharm 写代码插件](https://github.com/ls1248659692/leetcode/blob/master/docs/pycharm_plugin.md) ，并配置 [leetcode 刷题插件](https://github.com/ls1248659692/leetcode/blob/master/docs/leetcode_plugin.md) 方便直接拉取 Leetcode-cn 算法题，直接在IDE 里面写代码和套用算法模板，提高刷题效率，选用 Python 作为刷算法题语言，主要原因也是刷题效率。
 
 
 **算法题分类思维导图：**
