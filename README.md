@@ -16,7 +16,7 @@
 **算法题分类思维导图：**
 ![image](https://user-images.githubusercontent.com/33345911/155837010-d97e1df7-0261-4099-8039-6b31cf567b70.png)
 
-1. 本仓库的 spider 文件夹下 [spider/problems](https://github.com/ls1248659692/leetcode/tree/master/spider/problems) 都是基于 LeetCode 的题目和解法，已经爬取了Leetcode-cn 的全部算法练习题，之后会按照不同类型分类规整整理。有助于帮助大家做到同类型题**举一反三，一通百通**
+1. 本仓库的 spider 文件夹下 [spider/problems](https://github.com/ls1248659692/leetcode/tree/master/spider/problems) 都是基于 LeetCode 的题目和解法，已经爬取了Leetcode-cn 的全部算法练习题，已经按照不同类型分类规整整理，方便后续算法题对比与总结 。有助于帮助大家做到同类型题 **举一反三，一通百通**
 2. 本仓库的 book 文件夹下 [算法体系化学习书籍和面试题](https://github.com/ls1248659692/leetcode/tree/master/book)有相关算法系统学习书籍和题目推荐, 主要是针对算法入门的小伙伴参考。
 3. 做算法常用 Python 的标准库中有很多内置函数，它们的运行效率都很高，因为很多标准库是使用 C 语言编写的，**不要重复造轮子，不要重复造轮子，不要重复造轮子**。
 ![Python 内置函数](https://user-images.githubusercontent.com/33345911/161482867-f55aff93-1232-4d35-9b20-5a770e21b963.png)
