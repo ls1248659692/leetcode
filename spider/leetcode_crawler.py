@@ -142,7 +142,7 @@ class LeetcodeCrawler():
                 print('sqlite ',IS_SUCCESS)
                 while not IS_SUCCESS and req_retry<3:
                     # try:
-                        # 休眠随机 1 - 2 秒，以免爬去频率过高被服务器禁掉
+                        # 爬虫休眠随机 1 - 2 秒，爬取频率过高会被服务器检测到访问频率过快而禁掉ip的问题
                         time.sleep(random.randint(1, 5))
                         req_retry+=1
                         cursor = conn.cursor()
@@ -577,7 +577,6 @@ if __name__ == '__main__':
                 print('Specified tag is: {}'.format(args.tags))
 
     leetcr.connect_mysql()
-
     # leetcr.get_problems_describe()
     # leetcr.get_ac_questions_submission_json(filters,skipsubm=True)
     if args_dict.get('code'):
